@@ -4,7 +4,7 @@ class Solution {
 public:
     vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
         stack<int>st;
-        map<int,int>mp;
+        unordered_map<int,int>mp;
         for(int i=nums2.size()-1;i>=0;i--)
         {
             if(st.empty())mp[nums2[i]]=-1;
