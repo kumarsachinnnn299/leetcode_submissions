@@ -3,7 +3,6 @@
 class Solution {
 public:
     vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
-      vector<int>nle(nums2.size());
         stack<int>st;
         map<int,int>mp;
         for(int i=nums2.size()-1;i>=0;i--)
@@ -18,7 +17,7 @@ public:
             
             st.push(nums2[i]);
         }
-        // reverse(nle.begin(),nle.end());
+ 
         
          vector<int>ans;
         for(int i=0;i<nums1.size();i++)
