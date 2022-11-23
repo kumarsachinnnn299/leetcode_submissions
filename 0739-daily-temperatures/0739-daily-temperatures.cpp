@@ -1,3 +1,5 @@
+//similar to Next greater element  by adarsh playlist
+
 class Solution {
 public:
     vector<int> dailyTemperatures(vector<int>& nums) {
