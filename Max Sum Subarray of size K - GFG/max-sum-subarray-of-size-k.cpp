@@ -8,17 +8,19 @@ public:
     long maximumSumSubarray(int k, vector<int> &arr , int n){
         // code here 
         long ans=INT_MIN,sum=0;
-        int s=0;
-       for(int i=0;i<n;i++)
-       {
-           if(i-s+1>k)
-           {
-               sum-=arr[s];
-               s++;
-           }
-           sum+=arr[i];
-           ans=max(ans,sum);
-       }
+        int i=0,j=0;
+        while(j<n)
+        {
+            sum+=arr[j];
+            
+            if(j-i+1>k)
+            {
+                sum-=arr[i++];
+            }
+            ans=max(ans,sum);
+            j++;
+        }
+       
        return ans;
     }
 };
