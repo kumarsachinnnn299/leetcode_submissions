@@ -1,24 +1,16 @@
-// https://leetcode.com/problems/flip-string-to-monotone-increasing/discuss/3061178/C%2B%2BEasy-solution-with-explainationWithout-Dp
-
-// Note done
-
-class Solution
-{
+class Solution {
 public:
-    int minFlipsMonoIncr(string S)
-    {
-        int count_flip = 0, count_one = 0;
-        for (auto i : S)
-        { 
- //keep track of all one (we will use count_one in else condition if we need)  
-//if we want flip one into 0
-            if (i == '1')
-                count_one++;
+    int minFlipsMonoIncr(string s) {
+        
+        int count1=0,flip=0;
+        for(auto i:s)
+        {
+            if(i=='1')count1++;
             else{
-                count_flip++;
-            count_flip = min(count_flip, count_one);
+                flip++;
             }
+            flip=min(flip,count1);
         }
-        return count_flip;
+        return min(count1,flip);
     }
 };
