@@ -7,6 +7,8 @@ using namespace std;
 // } Driver Code Ends
 // User function Template for C++
 
+// https://www.youtube.com/watch?v=GCpWThzWz8s
+
 class Solution {
   public:
     int minVal(int a, int b) {
