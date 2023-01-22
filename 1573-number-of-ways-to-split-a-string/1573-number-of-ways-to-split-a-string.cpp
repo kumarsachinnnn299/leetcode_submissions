@@ -1,3 +1,7 @@
+// concept: https://www.youtube.com/watch?v=M-EI2cj2PNY
+
+// Code: https://www.youtube.com/watch?v=TSX__xdfOM8
+
 class Solution {
 public:
     int numWays(string s) {
