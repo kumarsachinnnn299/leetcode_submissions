@@ -6,6 +6,8 @@ using namespace std;
 
 // } Driver Code Ends
 //User function template for C++
+
+//Khud kiya
 class Solution{
 public:	
 	// Converts arr[0..n-1] to reduced form.
