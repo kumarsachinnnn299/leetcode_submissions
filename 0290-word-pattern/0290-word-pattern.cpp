@@ -1,3 +1,7 @@
+
+//Simple
+// https://www.youtube.com/watch?v=XO4U2KWgIgY
+
 class Solution {
 public:
     bool wordPattern(string pattern, string s) {
