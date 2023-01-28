@@ -1,3 +1,5 @@
+// https://www.youtube.com/watch?v=vsq18CFqses
+
 class SummaryRanges {
     set<int>st;
 public:
