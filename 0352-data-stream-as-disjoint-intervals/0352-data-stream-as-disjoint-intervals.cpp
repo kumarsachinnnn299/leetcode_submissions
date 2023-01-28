@@ -12,30 +12,24 @@ public:
     
     vector<vector<int>> getIntervals() {
         vector<vector<int>>ans;
-        int s=-1,e=-1;;
-        for( auto &i:st)
+        int s=*(st.begin()),e=*(st.begin());
+        for( auto i=++st.begin();i!=st.end();i++)
         {
-            if(s==-1)
+            if((*i)-e==1)
             {
-                s=i;
-                e=i;
-            }
-            else if(i-e==1)
-            {
-                e=i;
+                e++;;
             }
             else{
                 ans.push_back({s,e});
-                s=i;
-                e=i;
+                s=*i;
+                e=*i;
             }
         }
-          if(s!=-1)ans.push_back({s,e});
-               
+        ans.push_back({s,e});
+        
         return ans;
         
     }
-    
 };
 
 /**
