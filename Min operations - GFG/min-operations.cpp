@@ -4,6 +4,9 @@ using namespace std;
 
 
 // } Driver Code Ends
+
+// https://www.youtube.com/watch?v=EXp7PpkCU24
+
 class Solution {
   public:
     int solve(int a, int b) {
