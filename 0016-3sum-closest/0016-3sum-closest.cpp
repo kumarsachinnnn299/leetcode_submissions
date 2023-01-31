@@ -14,7 +14,7 @@ class Solution {
             int s=i+1,e=nums.size()-1;
             while(s<e)
             {   
-                if((nums[i]+nums[s]+nums[e])==target)return target;
+
                 
                 if(abs(target-nums[i]-nums[s]-nums[e])<dif)
                 {
