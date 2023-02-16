@@ -1,3 +1,5 @@
+// https://www.youtube.com/watch?v=1QlP6cVLrII
+
 class Solution {
 public:
     bool isIdealPermutation(vector<int>& nums) {
