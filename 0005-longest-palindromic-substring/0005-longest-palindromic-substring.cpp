@@ -1,40 +1,30 @@
-//reference:https://www.youtube.com/watch?v=WpYHNHofwjc
-
 class Solution {
 public:
     string longestPalindrome(string s) {
-        int l=s.length(),st,end;
-        if(l==1||(l==2&&s[0]==s[1]))return s;
-        bool dp[l][l];
-        int length=0;
-        for(int g=0;g<l;g++)
+        int n=s.length();
+        bool dp[n][n];
+        int st,e;
+        for(int gap=0;gap<n;gap++)
         {
-            for(int i=0,j=g;j<l;j++,i++)
+            for(int i=0,j=gap;j<n;j++,i++)
             {
-                if(g==0)
+                if(gap==0)dp[i][j]=true;
+                else if(gap==1)
                 {
-                    dp[i][j]=true;
-                }
-                else if(g==1){
-                    if(s[i]==s[j])dp[i][j]=true;
-                    else dp[i][j]=false;
+                    dp[i][j]=(s[i]==s[j]);
                 }
                 else{
-                    if(s[i]==s[j]&&dp[i+1][j-1])dp[i][j]=true;
-                    else dp[i][j]=false;
+                    dp[i][j]=((s[i]==s[j])&&dp[i+1][j-1]);
                 }
-                
                 if(dp[i][j])
                 {
-                    length=g+1;
                     st=i;
-                    end=j;
+                    e=j;
                 }
             }
-            
         }
-        string ans;
-        for(int i=st;i<=end;i++)ans+=s[i];
+        string ans="";
+        for(int i=st;i<=e;i++)ans+=s[i];
         return ans;
     }
 };
