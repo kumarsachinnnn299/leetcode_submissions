@@ -1,3 +1,5 @@
+//Khud se kiya
+
 class Solution {
 public:
     int appendCharacters(string s, string t) {
