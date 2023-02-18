@@ -20,7 +20,7 @@ public:
         while(end<n)
         {
             if(arr[end]=='O')co++;
-            while(s<n&&co>m)
+            while(s<end&&co>m)
             {
                 if(arr[s]=='O')co--;
                 s++;
