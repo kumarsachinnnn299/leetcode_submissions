@@ -9,6 +9,12 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+
+
+// https://www.youtube.com/watch?v=AtB_slSRo_A
+//Simple question . Level order traversal
+
+
 class Solution {
 public:
     int level=1;
