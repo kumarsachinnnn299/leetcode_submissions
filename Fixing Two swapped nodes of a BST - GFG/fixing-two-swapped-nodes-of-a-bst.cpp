@@ -99,6 +99,9 @@ bool compare(Node* a, Node* b, vector<pair<int, int>>& mismatch) {
     struct Node *left, *right;
 };*/
 
+// https://www.youtube.com/watch?v=-Po_r4o64kw
+
+
 class Solution {
   public:
     
