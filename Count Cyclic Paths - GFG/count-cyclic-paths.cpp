@@ -24,7 +24,7 @@ public:
             ans*=3;
             ans=ans%m;
             if(temp%2)ans-=3;
-            else ans=(ans+3)%m;
+            else ans+=3;
             temp++;
         }
         return ans;
