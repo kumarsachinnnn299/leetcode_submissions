@@ -1,3 +1,9 @@
+//Simple LCS ka hi extension h bas 
+//Reverse krdo given string ko to wo palindrome k liye kaam kr dega
+
+
+//Striver : https://www.youtube.com/watch?v=6i_T5kkfv4A
+
 class Solution {
 public:
     int longestPalindromeSubseq(string text1) {
