@@ -1,3 +1,5 @@
+//Ye approach LCS ko use krke h
+
 class Solution {
 public:
     int minDistance(string text1, string text2) {
