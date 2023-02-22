@@ -133,6 +133,12 @@ void inorder(Node *root)
     Node* nextRight;
 };*/
 
+
+
+
+
+//Done by self using BFS or level order traversal
+
 class Solution{
     public:
     void connect(Node *root)
