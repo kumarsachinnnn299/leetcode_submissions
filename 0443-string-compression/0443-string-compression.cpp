@@ -1,3 +1,5 @@
+//simlple question
+
 class Solution {
 public:
     int compress(vector<char>& arr) {
