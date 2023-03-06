@@ -8,6 +8,9 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+
+// https://www.youtube.com/watch?v=tHKp8UuOkm4
+
 class Solution {
 public:
     ListNode* reverseBetween(ListNode* head, int left, int right) {
@@ -43,11 +46,7 @@ public:
         if(leftend!=NULL)
         {
             leftend->next=prev;
-       //      while(leftend->next!=NULL)
-       // {
-       //     leftend=leftend->next;
-       // }
-       //  if(rightend!=NULL)leftend->next=rightend;
+
         }
         temp=head;
         if(rightend!=NULL)
