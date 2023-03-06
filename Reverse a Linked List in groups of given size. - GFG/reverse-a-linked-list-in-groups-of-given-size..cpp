@@ -64,11 +64,13 @@ class Solution
             curr=nxt;
             c++;
         }
+        
         if(nxt!=NULL)
         {
             head->next=reverse(nxt,k);
         }
         return prev;
+        
     }
 };
 
