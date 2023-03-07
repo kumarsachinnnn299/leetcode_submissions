@@ -10,19 +10,22 @@ class Solution{
     //array A[] which sums up to X.
     
     
-    //solution with extra space
+    // O n^2 with constant space
+    // https://www.youtube.com/watch?v=PiId4tgzcho
     
     bool find3Numbers(int A[], int n, int X)
     {
         //Your Code Here
+        sort(A,A+n);
+        int l,r=n-1;
         for(int i=0;i<n-2;i++)
-        {
-        unordered_set<int>st;
-            int curr=X-A[i];
-            for(int j=i+1;j<n;j++)
+        {   l=i+1;
+            r=n-1;
+            while(l<r)
             {
-                if(st.find(curr-A[j])!=st.end())return true;
-                st.insert(A[j]);
+                if((A[i]+A[l]+A[r])==X)return true;
+                else if((A[i]+A[l]+A[r])<X)l++;
+                else r--;
             }
         }
         return false;
