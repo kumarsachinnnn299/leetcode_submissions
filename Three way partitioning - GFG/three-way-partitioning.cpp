@@ -8,6 +8,8 @@ using namespace std;
 // } Driver Code Ends
 //User function template for C++
 
+// https://www.youtube.com/watch?v=QtpTDMBJqH0
+
 class Solution{   
 public:
     //Function to partition the array around the range such 
