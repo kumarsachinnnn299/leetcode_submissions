@@ -82,6 +82,11 @@ struct Node {
 }; */
 
 //Function to find intersection point in Y shaped Linked Lists.
+
+//Khud se kiya
+//Similar question on Leetcode
+
+
 int intersectPoint(Node* head1, Node* head2)
 {
     // Your Code Here
