@@ -8,6 +8,10 @@ class Solution{
     public:
     //Function to find if there exists a triplet in the 
     //array A[] which sums up to X.
+    
+    
+    //solution with extra space
+    
     bool find3Numbers(int A[], int n, int X)
     {
         //Your Code Here
