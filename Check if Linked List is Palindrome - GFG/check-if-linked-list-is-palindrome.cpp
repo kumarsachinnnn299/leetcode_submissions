@@ -29,6 +29,8 @@ struct Node {
 };
 */
 
+//Khud se kiya
+
 class Solution{
   public:
     //Function to check whether the list is palindrome.
