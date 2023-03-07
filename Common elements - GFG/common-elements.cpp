@@ -4,24 +4,35 @@ using namespace std;
 
 
 // } Driver Code Ends
+
+// https://www.youtube.com/watch?v=ajWCEu1razQ
+
 class Solution
 {
     public:    
        vector <int> commonElements (int A[], int B[], int C[], int n1, int n2, int n3)
         {
             //code here.
-            map<int,int>mp;
+            int i=0,j=0,k=0;
             vector<int>ans;
-            for(int  i=0;i<n1;i++)if(mp[A[i]]==0)mp[A[i]]++;
-            for(int  i=0;i<n2;i++)if(mp[B[i]]==1)mp[B[i]]++;
-            for(int  i=0;i<n3;i++)if(mp[C[i]]==2)mp[C[i]]++;
-          
-            for(auto i:mp)
+            while(i<n1&&j<n2&&k<n3)
             {
-                if(i.second==3)ans.push_back(i.first);
+                if(A[i]==B[j]&&B[j]==C[k])
+                {
+                    ans.push_back(A[i]);
+                    i++;
+                    j++;
+                    k++;
+                }
+                else if(A[i]<B[j])i++;
+                else if(B[j]<C[k])j++;
+                else k++;
+                while(A[i]==A[i-1])i++;
+                while(B[j]==B[j-1])j++;
+                while(C[k]==C[k-1])k++;
             }
+            if(ans.size()==0)return {-1};
             return ans;
-            
         }
 
 };
