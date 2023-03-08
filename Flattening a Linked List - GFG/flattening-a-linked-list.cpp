@@ -112,6 +112,12 @@ struct Node{
 /*  Function which returns the  root of 
     the flattened linked list. */
     
+    
+    //Khud kiya
+    // https://www.youtube.com/watch?v=rM5EEA_rbNY
+    
+    //Based on Merging two sorted linked lists
+    
     Node* merge(Node*first, Node*second)
     {
         if(first==NULL)return second;
