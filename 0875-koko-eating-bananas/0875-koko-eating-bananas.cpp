@@ -1,6 +1,8 @@
 class Solution {
 public:
     
+    //Khud kiya
+    
     bool isvalid(int gspeed,vector<int>&arr,int h)
     {
         int time=0;
