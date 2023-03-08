@@ -31,6 +31,12 @@ class Solution{
   public:
     //Function to sort the given linked list using Merge Sort.
     
+    //Iska ek short code bhi h
+    
+    // Ye love babbar se kiya
+    
+    // https://www.youtube.com/watch?v=rM5EEA_rbNY
+    
     void helpmerge(Node*first, Node*second)
     {
         if(first->next==NULL)
