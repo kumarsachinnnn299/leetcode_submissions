@@ -8,6 +8,9 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+
+// https://www.youtube.com/watch?v=ogmBt6f9hw8
+
 class Solution {
 public:
     
