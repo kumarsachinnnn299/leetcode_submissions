@@ -27,6 +27,11 @@ int main(){
 }
 // } Driver Code Ends
 
+
+// https://www.youtube.com/watch?v=QMlDCR9xyd8
+
+//Not fully understand why this formula is used
+
 int mine=1e5;
 
 void push(stack<int>& s, int a){
