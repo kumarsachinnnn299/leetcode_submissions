@@ -1,3 +1,6 @@
+//https://www.youtube.com/watch?v=NYzAm7nhpdk
+//Thoda isse resemble kiya
+
 class Solution {
 public:
     int thirdMax(vector<int>& nums) {
