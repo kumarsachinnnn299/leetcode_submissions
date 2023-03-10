@@ -8,46 +8,46 @@ using namespace std;
 // } Driver Code Ends
 //User function Template for C++
 
-//Khud kiya
-
+//Extra spacse and nlogn se Khud kiya
+// ye wla youtube se
+// https://www.youtube.com/watch?v=NYzAm7nhpdk
 
 class Solution {
   public:
     long long maxTripletProduct(long long arr[], int n)
     {
-    	// Complete the function
-    	if(n==3)return arr[0]*arr[1]*arr[2];
-    	sort(arr,arr+n);
-    	int cn=0,cp=0;
-    	for(int i=0;i<n;i++){
-    	    if(arr[i]<0)cn++;
-    	    else cp++;
-    	}
-    	if(cp==0)
-    	{
-    	    return arr[n-1]*arr[n-2]*arr[n-3];
-    	}
-        if(cn==0||cn==1)
+        long long max1=LONG_MIN,max2=LONG_MIN,max3=LONG_MIN,min1=LONG_MAX,min2=LONG_MAX;
+        // max1=*max_element(arr,arr+n);
+        // min1=*min_element(arr,arr+n);
+        for(int i=0;i<n;i++)
         {
-            return arr[n-1]*arr[n-2]*arr[n-3];
+            if(arr[i]>=max1)
+            {
+                max3=max2;
+                max2=max1;
+                max1=arr[i];
+            }
+            else if(arr[i]>=max2) 
+            {
+                max3=max2;
+                max2=arr[i];
+            }
+            else if(arr[i]>=max3)
+            {
+                max3=arr[i];
+            }
+            if(arr[i]<=min1)
+            {
+                min2=min1;
+                min1=arr[i];
+            }
+            else if(arr[i]<=min2)
+            {
+                min2=arr[i];
+            }
         }
-        if(cn>=2)
-        {
-            // long long start=arr[0]*arr[1];
-            // long long end=arr[n-1]*arr[n-2];
-            // if(start>end)
-            // {
-            //     return start*arr[n-1];
-            // }
-            // else{
-            //     return end*arr[n-3];
-            // }
-            long long start=arr[0]*arr[1]*arr[n-1];
-            long long end=arr[n-1]*arr[n-2]*arr[n-3];
-            return max(start,end);
-        }
-        return 0;
- 
+        return max((min1*min2*max1),(max1*max2*max3));
+    
     }
 };
 
