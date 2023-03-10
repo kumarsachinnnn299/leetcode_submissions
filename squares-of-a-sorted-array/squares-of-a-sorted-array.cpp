@@ -1,3 +1,4 @@
+// https://www.youtube.com/watch?v=XgRIr8CCCVk
 class Solution {
 public:
     vector<int> sortedSquares(vector<int>& nums) {
