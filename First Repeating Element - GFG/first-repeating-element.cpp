@@ -12,20 +12,20 @@ class Solution {
     // Function to return the position of the first repeating element.
     int firstRepeated(int arr[], int n) {
         // code here
-        map<int,int>mp;
-        int ans=INT_MAX;
-        for(int i=0;i<n;i++)
-        {
-            if(mp[arr[i]]>=1)
-            {
-                ans=min(ans,mp[arr[i]]);
+        // map<int,int>mp;
+   int k=INT_MAX;
+        unordered_map<int,int>mp;
+        for(int i=0;i<n;i++){
+            if(mp[arr[i]]){
+                 k=min(k,mp[arr[i]]);
+             
             }
-           else mp[arr[i]]=i+1;
+            else{
+                mp[arr[i]]=i+1;
+            }
         }
-        
-        // for(auto i:mp)cout<<i.first<<' '<<i.second<<endl;
-        if(ans==INT_MAX)return -1;
-        return ans;
+        if(k==INT_MAX)return -1;
+        return k;
         
         
     }
