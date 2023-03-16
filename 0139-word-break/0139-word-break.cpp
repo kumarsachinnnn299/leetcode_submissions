@@ -9,7 +9,7 @@ public:
         for(int i=start;i<s.size();i++)
         {
             temp+=s[i];
-            if(st.find(temp)!=st.end()&&helper(s,i+1,st))return 1;
+            if(st.find(temp)!=st.end()&&helper(s,i+1,st))return dp[start]= 1;
         }
         return dp[start]=0;
     }
