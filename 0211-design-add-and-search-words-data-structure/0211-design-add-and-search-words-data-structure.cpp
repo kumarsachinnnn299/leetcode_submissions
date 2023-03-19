@@ -1,4 +1,8 @@
 
+// https://leetcode.com/problems/design-add-and-search-words-data-structure/discuss/3313792/Image-Explanation-Easy-Trie-C%2B%2BJavaPython
+
+// https://www.youtube.com/watch?v=vRPDOZ2U0hs
+
 class Trie{
     public:
     Trie* letters[26];
