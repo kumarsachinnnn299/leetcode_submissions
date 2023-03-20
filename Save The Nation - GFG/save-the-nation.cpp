@@ -17,13 +17,12 @@ class Solution {
         int x=floor(len);
         int y=ceil(len);
         // cout<<x<<' '<<y;
-        int gap;
-        if((x*y)==S.size())gap=y;
-        else gap=y;
+        
+      
         string ans="";
-        for(int i=0;i<gap;i++)
+        for(int i=0;i<y;i++)
         {
-            for(int j=i;j<S.size();j+=gap)
+            for(int j=i;j<S.size();j+=y)
             {
                 ans+=S[j];
             }
