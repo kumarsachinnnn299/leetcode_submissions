@@ -11,10 +11,10 @@ public:
         if(vis[node])return;
         vis[node]=true;
         
-        for(auto & [f,s]:arr[node])
+        for(auto i:arr[node])
         {
-            ans=min(ans,s);
-            dfs(ans,f,arr);
+            ans=min(ans,i.second);
+            dfs(ans,i.first,arr);
         }
     }
         
