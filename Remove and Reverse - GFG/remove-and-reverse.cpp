@@ -5,6 +5,11 @@ using namespace std;
 
 // } Driver Code Ends
 //User function Template for C++
+
+//Pichla submission jo khud se kra usme erase kra h
+//uski complexity jyada h
+//ye same hi h bas rhoda sa farak
+
 class Solution {
   public:
     string removeReverse(string S) {
@@ -17,25 +22,22 @@ class Solution {
             arr[i-'a']++;
           
         }
-        // for(auto i:arr)
-        // {
-        //     if(i>1)rc+=(i-1);
-        // }
-        
+   
         int i=0,j=S.size()-1;
         bool f=true;//to show travelling from front ie left to right
         while(i<j)
         {   
-            // cout<<i<<' '<<j<<" -> "<<S<<endl;
+            
             
             if(f)
             {
                 if(arr[S[i]-'a']>1)
                 {
                     arr[S[i]-'a']--;
-                    S.erase(i,1);
+                    S[i]='@';
+                    i++;
                     f=false;
-                    j--;
+                 
                 }
                 else i++;
             }
@@ -43,18 +45,22 @@ class Solution {
                 if(arr[S[j]-'a']>1)
                 {
                     arr[S[j]-'a']--;
-                    S.erase(j,1);
+                    S[j]='@';
                     f=true;
                     j--;
                 }
                 else j--;
             }
             
-            // cout<<i<<' '<<j<<" -> "<<S<<endl;
+           
         }
-        
-        if(!f)reverse(S.begin(),S.end());
-        return S;
+        string ans="";
+        for(auto i:S)
+        {
+            if(i!='@')ans+=i;
+        }
+        if(!f)reverse(ans.begin(),ans.end());
+        return ans;
        
      
       
