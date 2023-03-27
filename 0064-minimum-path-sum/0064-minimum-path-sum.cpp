@@ -21,10 +21,7 @@ public:
             }
         }
         
-        for(auto i:dp){
-            for(auto j:i)cout<<j<<' ';
-            cout<<endl;
-        }
+
         
         for(int i=1;i<grid.size();i++)
         {
@@ -33,10 +30,7 @@ public:
                 dp[i][j]=min(dp[i-1][j],dp[i][j-1])+grid[i][j];
             }
         }
-          for(auto i:dp){
-            for(auto j:i)cout<<j<<' ';
-            cout<<endl;
-        }
+    
         return dp[grid.size()-1][grid[0].size()-1];
     }
 };
