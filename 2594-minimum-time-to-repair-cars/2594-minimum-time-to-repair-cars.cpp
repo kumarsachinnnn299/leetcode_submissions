@@ -15,13 +15,13 @@ public:
     long long repairCars(vector<int>& ranks, int cars) {
          long long s=1,e=1e14;
         // long long ans=0;
-        while(s<e)
+        while(s<=e)
         {
             long long mid=s+(e-s)/2;
             if(isvalid(mid,ranks,cars))
             {
                 // ans=min(ans,mid);
-                e=mid;
+                e=mid-1;
             }
             else s=mid+1;
         }
