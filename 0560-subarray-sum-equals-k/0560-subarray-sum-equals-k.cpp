@@ -3,18 +3,17 @@
 
 class Solution {
 public:
-    int subarraySum(vector<int>& nums, int k) {
-        long long sum=0;
-        int ans=0;
-        map<long long,long long>mp;
-        mp[0]=1;
-        
+    int subarraySum(vector<int>& nums, long long k) {
+       int ans=0;
+        unordered_map<long long,long long>mp;
+        // mp[0]++;
+        long long cursum=0;
         for(int i=0;i<nums.size();i++){
-            sum+=nums[i];
-            if(mp.find(sum-k)!=mp.end())ans+=mp[sum-k];
-            mp[sum]++;
+            cursum+=nums[i];
+            if(cursum==k)ans++;
+            if(mp.find(cursum-k)!=mp.end())ans+=mp[cursum-k];
+            mp[cursum]++;
         }
-        
         return ans;
     }
 };
