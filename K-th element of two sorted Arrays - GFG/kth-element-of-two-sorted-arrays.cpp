@@ -4,20 +4,42 @@ using namespace std;
 
 
 // } Driver Code Ends
+
+// https://www.youtube.com/watch?v=aJXVzISO5GU
+//similar to mergesort code
 class Solution{
     public:
     int kthElement(int arr1[], int arr2[], int n, int m, int k)
     {
-        vector<int>v;
-        for(int i=0;i<n;i++)v.push_back(arr1[i]);
-            for(int j=0;j<m;j++){
-                
-                v.push_back(arr2[j]);
-            }
-        
-        sort(v.begin(),v.end());
-     int s=v[k-1];
-    return s;
+       int i=0,j=0;
+       int currelement=0;
+       while(i<n&&j<m)
+       {
+           if(arr1[i]<=arr2[j])
+           {
+               currelement++;
+               if(currelement==k)return arr1[i];
+               i++;
+           }
+           else{
+                currelement++;
+               if(currelement==k)return arr2[j];
+               j++;
+           }
+       }
+       while(i<n)
+       {
+            currelement++;
+               if(currelement==k)return arr1[i];
+               i++;
+       }
+       while(j<m)
+       {
+            currelement++;
+               if(currelement==k)return arr2[j];
+               j++;
+       }
+       return -1;
     }
 };
 
