@@ -28,6 +28,9 @@ public:
 
 
 // } Driver Code Ends
+
+//Khud kiya
+
 class Solution {
   public:
     int equalSum(int N, vector<int> &A) {
