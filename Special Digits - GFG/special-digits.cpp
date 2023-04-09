@@ -6,6 +6,7 @@ using namespace std;
 // } Driver Code Ends
 
 //Difficult question
+// https://www.youtube.com/watch?v=jiXA-9L_qP4
 
 int done=0;
 vector<long long>f,inv;
