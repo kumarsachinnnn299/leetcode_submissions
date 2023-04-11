@@ -13,9 +13,10 @@ public:
             int x=i;
             int mask=x&(-1*x);
             while(true)
-            {   if(mask==0)break;
+            {   
                 c++;
                 x-=mask;
+             if(x==0)break;
                 mask=(x&(-1*x));
             }
             ans.push_back(c);
