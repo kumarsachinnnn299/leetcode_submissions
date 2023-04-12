@@ -10,7 +10,7 @@ public:
 	int search(int nums[], int n){
 	    //code
 	    int s=0,e=n-1;
-        if(n==1)return nums[0];
+        // if(n==1)return nums[0];
         while(s<=e)
         {   
             int mid=s+(e-s)/2;
