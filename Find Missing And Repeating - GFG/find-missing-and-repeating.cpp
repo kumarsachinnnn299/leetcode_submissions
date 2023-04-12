@@ -8,6 +8,8 @@ using namespace std;
 // https://www.youtube.com/watch?v=MvklwzVz654&list=PL-Jc9J83PIiFJRioti3ZV7QabwoJK6eKe&index=10
 //Similar to question repeating element except two
 
+//isme h
+
 class Solution{
 public:
     int *findTwoElement(int *arr, int n) {
@@ -35,6 +37,7 @@ public:
         
    
         int *res;
+        //this loop is just to find which element is missing and which is repaeting
         bool found=false;
         for(int i=0;i<n;i++)
         {
