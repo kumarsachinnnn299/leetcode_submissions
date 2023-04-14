@@ -28,6 +28,10 @@ public:
 
 
 // } Driver Code Ends
+
+// khud kiya
+//Simple question but took lot of time
+
 class Solution {
   public:
     int totalTime(int n, vector<int> &arr, vector<int> &time) {
