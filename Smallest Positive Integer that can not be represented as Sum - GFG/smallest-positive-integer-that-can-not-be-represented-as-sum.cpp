@@ -20,8 +20,8 @@ public:
         sort(array.begin(),array.end());
         for(int i=0;i<n;i++)
         {
-            if(array[i]>ans)return ans;
-            ans+=array[i];
+            if(array[i]<=ans)ans+=array[i];
+            else return ans;
         }
         return ans;
     } 
