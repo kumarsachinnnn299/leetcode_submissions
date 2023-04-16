@@ -11,9 +11,12 @@ class Solution{
 public:
     
     long long factorial(long long n)
-    {
-        if(n==1||n==0)return 1;
-        return n*factorial(n-1);
+    {   long long ans=1;
+       for(int i=1;i<=n;i++)
+       {
+        ans*=i;   
+       }
+       return ans;
     }
 
     long long nPr(int n, int r){
