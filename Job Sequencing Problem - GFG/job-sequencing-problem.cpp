@@ -23,39 +23,42 @@ struct Job
 };
 */
 
-
-// https://www.youtube.com/watch?v=bID397v7ja4
-
 class Solution 
 {
     public:
-    
-    static bool comp(Job a, Job b)
-    {
-        return a.profit>b.profit;
-    }
-    
     //Function to find the maximum profit and the number of jobs done.
     vector<int> JobScheduling(Job arr[], int n) 
     { 
         // your code here
-        sort(arr,arr+n,comp);
-      vector<int>done(n);
-      int day=0,profit=0;
-      for(int i=0;i<n;i++)
-      {
-          for(int j=min(n,arr[i].dead-1);j>=0;j--)
-          {
-              if(done[j]==0)
-              {
-                  day++;
-                  profit+=arr[i].profit;
-                  done[j]=true;
-                  break;
-              }
-          }
-      }
-      return {day,profit};
+        vector<pair<int,int>>job;
+        for(int i=0;i<n;i++)
+        {
+            job.push_back({arr[i].dead,arr[i].profit});
+            
+        }
+        
+        vector<int>deadline(101);
+        
+        sort(job.begin(),job.end(),[](pair<int,int>&A, pair<int,int>& B)
+        {
+            return A.second>B.second;
+        });
+        // for(auto i:job)cout<<i.first<<"->"<<i.second<<endl;
+        
+        int profit=0,jobc=0;
+        for(auto i:job)
+        {   int temp=i.first;
+            while(temp>0&&deadline[temp]==1)temp--;
+            if(temp>0)
+            {
+                deadline[temp]=1;
+                profit+=i.second;
+                jobc++;
+            }
+            
+        }
+        
+        return {jobc,profit};
     } 
 };
 
