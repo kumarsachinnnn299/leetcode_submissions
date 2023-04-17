@@ -7,6 +7,17 @@ b) reverse previous n-k elements
 
 */
 
+//left rotate k liye bas ulta kro
+/*
+
+approach-> 
+a) reverse first k elements
+b) reverse next n-k elements
+3) reverse whole array
+*/
+
+
+
 // https://www.youtube.com/watch?v=f-Kfg6ujpG8&list=PLjeQ9Mb66hM33kyoJjJbHf72Rb0G70Sae
 class Solution {
 public:
