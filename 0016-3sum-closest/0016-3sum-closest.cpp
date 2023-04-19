@@ -1,28 +1,32 @@
-// https://www.youtube.com/watch?v=anuarmFjTGU
+
+// https://www.youtube.com/watch?v=3t1AOF0vj5s&list=PLjeQ9Mb66hM33kyoJjJbHf72Rb0G70Sae&index=7
+//Three pointers se ho jayega sort krke
 
 class Solution {
-    
-    
-    
-    public:
-    
+public:
     int threeSumClosest(vector<int>& nums, int target) {
-        int ans=0,dif=INT_MAX;
         sort(nums.begin(),nums.end());
+        int diff=INT_MAX, ans=0;
         for(int i=0;i<nums.size();i++)
         {
-            int s=i+1,e=nums.size()-1;
-            while(s<e)
-            {   
-
-                
-                if(abs(target-nums[i]-nums[s]-nums[e])<dif)
+            int j=i+1;
+            int k=nums.size()-1;
+            while(j<k)
+            {
+                int temp=nums[i]+nums[j]+nums[k];
+                if(temp==target)return target;
+                if(abs(temp-target)<diff)
                 {
-                    dif=abs(target-nums[i]-nums[s]-nums[e]);
-                             ans=nums[i]+nums[s]+nums[e];
+                    diff=abs(temp-target);
+                    ans=temp;
                 }
-               if((nums[i]+nums[s]+nums[e])<target)s++;
-                               else e--;
+                if(temp>target)
+                {
+                    k--;
+                }
+                else{
+                    j++;
+                }
             }
         }
         return ans;
