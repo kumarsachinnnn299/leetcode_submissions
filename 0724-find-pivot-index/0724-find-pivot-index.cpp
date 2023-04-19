@@ -9,7 +9,7 @@ public:
             pre[i+1]=pre[i]+nums[i];
         }
         
-        for(auto i:pre)cout<<i<<' ';
+    
         
         for(int i=1;i<=n;i++)
         {
