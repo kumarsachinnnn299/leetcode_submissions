@@ -113,9 +113,7 @@ class Solution{
         unordered_map<Node*,bool>vis;
         // parent[root]=NULL;
         while(!q.empty())
-        {   int s=q.size();
-            for(int i=0;i<s;i++)
-            {
+        {   
                  Node*temp=q.front();
             q.pop();
             if(temp->data==home)target=temp;
@@ -129,7 +127,7 @@ class Solution{
                 q.push(temp->right);
                 parent[temp->right]=temp;
             }
-            }
+            
            
         }
         
