@@ -10,30 +10,29 @@ using namespace std;
 class Solution{
   public:
     
-    string longestCommonPrefix (string arr[], int n)
+    string longestCommonPrefix (string arr[], int N)
     {
         // your code here
-        int minlen=INT_MAX;
-        for(int i=0;i<n;i++){
-            int l=arr[i].size();
-            minlen=min(minlen,l);
-            
-        }
-        string ans="";
-        for(int i=0;i<minlen;i++)
+       string ans="";
+        for(int  i=0;i<arr[0].size();i++)
         {
-            for(int j=1;j<n;j++)
-            {
-                if(arr[j][i]!=arr[j-1][i]){
-                   if(ans.size()==0)return "-1";
-                    return ans;
-                    
-                }
-            }
-            ans+=arr[0][i];
+           for(int j=1;j<N;j++) 
+        
+        {
+            
+           if( i==arr[j].size()||arr[j][i]!=arr[0][i])
+           {
+               return ans == "" ? "-1" : ans;
+               
+           }
+              
+              
         }
-        if(ans.size()==0)return "-1";
-        return ans;
+             ans+=arr[0][i];
+        
+        }
+       
+        return ans == "" ? "-1" : ans;
         
     }
 };
