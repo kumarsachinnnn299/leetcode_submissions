@@ -25,23 +25,33 @@ index of right child=2*(idx of parent)+2
 class Solution {
 public:
     int widthOfBinaryTree(TreeNode* root) {
-        if(root==NULL)
-            return 0;
+        if(!root)return 0;
+        queue<pair<TreeNode*,int>>q;
+        q.push({root,0});
         long long ans=0;
-        queue<pair<TreeNode*, int>>q;
-        q.push({root, 0});
-        while(!q.empty()){
-            int l=q.size();
-            long long la=q.back().second, f=q.front().second;
-            for(int i=0; i<l; i++){
-                TreeNode* temp;
-                temp=q.front().first;
-                long long ind=q.front().second;
-                q.pop();   
-                if(temp->left!=NULL){q.push({temp->left, ind*2+1});}
-                if(temp->right!=NULL){q.push({temp->right, ind*2+2});}
+        
+        while(!q.empty())
+        {
+            int n=q.size();
+            long long fidx=q.front().second;
+           long long lidx=q.back().second;
+            for(int i=0;i<n;i++)
+            {
+                auto temp=q.front();
+                q.pop();
+                long long idx=temp.second;
+                if(temp.first->left)
+                {   
+                    q.push({temp.first->left,idx*2+1});
+                }
+                if(temp.first->right)
+                {
+                    q.push({temp.first->right,idx*2+2});
+                }
             }
-            ans=max(ans, la-f+1);
+            
+            ans=max(ans,lidx-fidx+1);
+            
         }
         return ans;
     }
