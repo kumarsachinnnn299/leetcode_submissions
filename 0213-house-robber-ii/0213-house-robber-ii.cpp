@@ -1,4 +1,5 @@
-//bas ek condition change hogi house robbers 1 se
+//similar to house robbers 1
+//bas ek condition change hogi 
 //if 1 is inlcuded last should not be included as they are adjacent
 //if last is included then first should not be included
 
