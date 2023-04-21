@@ -1,3 +1,8 @@
+//Subsets wale question ki type ka h
+
+//rohan ne hint di
+//khud kiya
+
 class Solution {
 public:
     int helper(vector<int>& nums,vector<int>& dp,int idx)
