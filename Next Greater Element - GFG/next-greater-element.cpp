@@ -18,18 +18,14 @@ class Solution
                 {
                     ans[i]=-1;
                 }
-                else{
-                    if(st.top()>arr[i])
-                    {
-                        ans[i]=st.top();
-                    }
+               
                     else{
                         while(!st.empty()&&st.top()<=arr[i])st.pop();
                         if(st.empty())ans[i]=-1;
                         else ans[i]=st.top();
                         
                     }
-                }
+                
                 
                 st.push(arr[i]);
             }
