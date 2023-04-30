@@ -5,28 +5,26 @@
 class Solution {
 public:
     
-    int helper(int i,int j ,vector<int> &cuts,vector<vector<int>> &dp){
-        if(i>j) return 0;
-        
-        if(dp[i][j]!=-1){
-            return dp[i][j];
+    int helper(int  s,int e, vector<int>&cuts,vector<vector<int>>&dp)
+    {
+        if(s>e)return 0;
+        if(dp[s][e]!=-1)return dp[s][e];
+        int ans=INT_MAX;
+        for(int i=s;i<=e;i++)
+        {
+            int temp=cuts[e+1]-cuts[s-1]+helper(s,i-1,cuts,dp)+helper(i+1,e,cuts,dp);
+            ans=min(ans,temp);
         }
-        
-        int mini=INT_MAX;
-        
-        for(int ind=i;ind<=j;ind++){
-            int cost=cuts[j+1]-cuts[i-1] + helper(i,ind-1,cuts,dp) + helper(ind+1,j,cuts,dp);
-            mini=min(mini,cost);
-        }
-        return dp[i][j]=mini;
+        return dp[s][e]=ans;
     }
     
     int minCost(int n, vector<int>& cuts) {
-        int m=cuts.size();
+       int m=cuts.size();
         cuts.push_back(n);
         cuts.insert(cuts.begin(),0);
+         vector<vector<int>>dp(m+1,vector<int>(m+1,-1));
+        
         sort(cuts.begin(),cuts.end());
-        vector<vector<int>> dp(m+1,vector<int> (m+1,-1));
         return helper(1,m,cuts,dp);
     }
 };
