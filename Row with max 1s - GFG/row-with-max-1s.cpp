@@ -13,6 +13,9 @@ approach 1
 
 in each row find index of first 1 using binary search and return the row with min index of first 1
 
+
+TC o(n*logm)
+
 */
 
 class Solution{
