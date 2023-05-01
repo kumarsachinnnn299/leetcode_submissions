@@ -9,12 +9,13 @@ using namespace std;
 
 /*
 
-approach 1
+approach 2
 
-in each row find index of first 1 using binary search and return the row with min index of first 1
+j lenge m-1 se
+
+in each row j-- krenge tab tak jab tak 1 mil rha h 
 
 
-TC o(n*logm)
 
 */
 
@@ -22,24 +23,17 @@ class Solution{
 public:
 	int rowWithMax1s(vector<vector<int> > arr, int n, int m) {
 	    // code here
-	    int ans=-1,col=m;
+	    int ans=-1,j=m-1;
 	    for(int i=0;i<n;i++)
 	    {
-	        int s=0,e=m-1;
-	        int idx=m;
-	        while(s<=e)
+	        bool flag=false;
+	        while(j>=0&&arr[i][j])
 	        {
-	            int mid=s+(e-s)/2;
-	            if(arr[i][mid]==1){
-	                idx=mid;
-	                e=mid-1;
-	                
-	            }
-	            else s=mid+1;
+	            j--;
+	            flag=true;
 	        }
-	       // cout<<idx<<endl;
-	        if(idx<col)
-	        {   col=idx;
+	        if(flag)
+	        {
 	            ans=i;
 	        }
 	    }
