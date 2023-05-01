@@ -15,7 +15,7 @@ j lenge m-1 se
 
 in each row j-- krenge tab tak jab tak 1 mil rha h 
 
-
+TC O(m+n)
 
 */
 
