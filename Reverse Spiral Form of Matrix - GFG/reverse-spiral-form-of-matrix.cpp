@@ -5,6 +5,11 @@ using namespace std;
 
 // } Driver Code Ends
 // User function Template for C++
+
+// https://practice.geeksforgeeks.org/problems/spirally-traversing-a-matrix-1587115621/0
+
+//return m ans ko reverse krke return kra do
+
 class Solution {
   public:
     vector<int> reverseSpiral(int R, int C, vector<vector<int>>&arr)  {
