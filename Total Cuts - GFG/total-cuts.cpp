@@ -8,6 +8,8 @@ using namespace std;
 // } Driver Code Ends
 //User function Template for C++
 
+//Khud kiya
+
 class Solution{
 public:
     int totalCuts(int N,int K,vector<int> &A){
@@ -31,10 +33,6 @@ public:
             else minr[i]=minr[i+1];
         }
         
-        // for(auto i:maxl)cout<<i<<' ';
-        // cout<<endl;
-        //  for(auto i:minr)cout<<i<<' ';
-        // cout<<endl;
         
         int ans=0;
         for(int i=0;i<N-1;i++)
