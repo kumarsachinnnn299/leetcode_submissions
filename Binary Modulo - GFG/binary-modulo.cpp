@@ -7,6 +7,7 @@ using namespace std;
 // } Driver Code Ends
 //User function Template for C++
 
+// https://www.youtube.com/watch?v=twFvNBbgypM
 class Solution{
     public:
         int modulo(string s,int m)
