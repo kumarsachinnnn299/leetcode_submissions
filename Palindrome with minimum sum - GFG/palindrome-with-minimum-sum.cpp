@@ -22,20 +22,17 @@ class Solution {
             if(str[s]=='?'&&str[e]!='?')
             {
                 str[s]=str[e];
-                s++;
-                e--;
+               
             }
             else if(str[s]!='?'&&str[e]=='?')
             {
                 str[e]=str[s];
-                s++;
-                e--;
+                
             }
             else if(str[s]=='?'&&str[e]=='?')
             {   if(s==0)
                 {
                    int s2=s,e2=e;
-                
                    while(s2<e2&&str[s2]=='?'&&str[e2]=='?')
                    {
                        s2++;
@@ -46,46 +43,28 @@ class Solution {
                        if(str[s2]!='?')
                        {
                         str[s]=str[s2];
-                        str[e]=str[s2];
-                        s++;
-                         e--;
-                       }
+                        str[e]=str[s2];}
                        else{
                         str[s]=str[e2];
-                        str[e]=str[e2];
-                        s++;
-                         e--;
-                       }
+                        str[e]=str[e2];}
                    }
                    else{
                        str[s]='a';
-                       str[e]='a';
-                       s++;
-                       e--;
-                   }
+                       str[e]='a';}
                 }
                 else
                 {
                 str[s]=str[s-1];
                 str[e]=str[e+1];
+                }   
+            }  
                 s++;
-                e--;
-                }
-                
-                
-            }
-            else{
-                s++;
-                e--;
-            }
+                e--; 
         }
-        
         for(int i=1;i<str.size();i++)
         {
             ans+=abs(str[i]-str[i-1]);
         }
-        
-        // cout<<str<<endl;
         return ans;
         
     }
