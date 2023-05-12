@@ -1,7 +1,3 @@
-//Khud kiya
-
-//Same as house robber question
-
 class Solution {
     
 public:
@@ -10,8 +6,8 @@ public:
     {
         if(cidx>=arr.size())return 0;
         if(dp[cidx]!=-1)return dp[cidx];
-        long long taken=(long long)(arr[cidx][0])+helper(dp,arr,cidx+arr[cidx][1]+1);
-        long long  nottaken=helper(dp,arr,cidx+1);
+        long long taken=arr[cidx][0]+helper(dp,arr,cidx+arr[cidx][1]+1);
+        long long nottaken=helper(dp,arr,cidx+1);
         return dp[cidx]=max(taken,nottaken);
     }
     
