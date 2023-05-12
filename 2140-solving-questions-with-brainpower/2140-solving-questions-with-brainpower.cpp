@@ -1,3 +1,7 @@
+//Khud kiya
+
+//Same as house robber question
+
 class Solution {
     
 public:
