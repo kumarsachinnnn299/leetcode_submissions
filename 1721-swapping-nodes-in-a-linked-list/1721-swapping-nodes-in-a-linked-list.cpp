@@ -8,6 +8,9 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+
+//Khud kiya
+
 class Solution {
 public:
     ListNode* swapNodes(ListNode* head, int k) {
@@ -21,15 +24,18 @@ public:
         
         cout<<total;
         j=head;
-        while(ptr!=NULL)
+        bool flag1=false,flag2=false;
+        while(ptr!=NULL&&(flag1==false||flag2==false))
         {    c++;
             if(c==k)
             {
              i=ptr;   
+                flag1=true;
             }
             if(c==(total-k+1))
             {
                 j=ptr;
+                flag2=true;
                 
             }
            
