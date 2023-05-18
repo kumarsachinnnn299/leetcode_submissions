@@ -1,53 +1,37 @@
-//Not understood
-
 class Solution {
 public:
-    int closedIsland(vector<vector<int>>& grid){
-
-        int dir_x[4] = {1, -1, 0, 0};
-        int dir_y[4] = {0, 0, 1, -1};
-
-        int ans = 0;  
-
-        int m = grid.size(), n = grid[0].size();
-
-        vector<vector<bool>> vis(m, vector(n, false));
-
-        for(int i = 0; i < m; i++){
-            for(int j = 0; j < n; j++){
-
-                if(vis[i][j] || grid[i][j] == 1) 
-                    continue;
-
-                queue<pair<int, int>> q({{i, j}});
-
-                bool is_closed = true;
-
-                while(!q.empty()){
-
-                    auto front = q.front();
-                    q.pop();
-
-                    for(int k = 0; k < 4; k++){
-
-                        int dy = front.first + dir_y[k];
-                        int dx = front.second + dir_x[k];
-                        
-                        if(dy < 0 || dy >= m || dx < 0 || dx >= n) { 
-                            is_closed = false;
-                            continue;
-                        }
-                        if(grid[dy][dx] == 1) continue;
-                        if(vis[dy][dx]) continue;
-                        vis[dy][dx] = true;
-                        q.push({dy, dx});
-                    }
-                }
-                if(is_closed) 
-                    ans++;
+    
+     void help(vector<vector<int>>& matrix,int i,int j)
+    {
+        if(i<0||j<0||i>=matrix.size()||j>=matrix[0].size()||matrix[i][j]==1)return;
+        matrix[i][j]=1;
+        help(matrix,i-1,j);
+        help(matrix,i,j+1);
+        help(matrix,i+1,j);
+        help(matrix,i,j-1);
+    }
+    
+    
+    int closedIsland(vector<vector<int>>& matrix) {
+       int N=matrix.size(),M=matrix[0].size(),ans=0;
+        
+          for(int i=0;i<N;i++)
+        {
+            for(int j=0;j<M;j++)
+            {   if(matrix[i][j]==0&&(i==0||j==0||i==N-1||j==M-1))
+               { help(matrix,i,j);}
             }
         }
-
+        
+         for(int i=0;i<N;i++)
+        {
+            for(int j=0;j<M;j++)
+            {   if(matrix[i][j]==0)
+               { help(matrix,i,j);
+                   ans++;
+               }
+            }
+        }
         return ans;
     }
 };
