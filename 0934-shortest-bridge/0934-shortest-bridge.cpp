@@ -1,4 +1,4 @@
-//Not done due to st
+// st-2
 class Solution {
 public:
    bool isvalid(int x,int y,int n)
