@@ -43,6 +43,9 @@ struct Node
     
 };
 */
+
+//Bruteforce
+
 class Solution{
     public:
     struct Node* modifyTheList(struct Node *head)
