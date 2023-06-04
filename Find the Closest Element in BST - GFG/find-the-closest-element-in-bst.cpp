@@ -32,6 +32,8 @@ struct Node {
 };
 */
 
+//Khud kiya simple question
+
 class Solution
 {
     public:
