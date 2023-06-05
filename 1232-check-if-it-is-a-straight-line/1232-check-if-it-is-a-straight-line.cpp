@@ -7,7 +7,7 @@ public:
         {
             double x=(double)arr[i][0],y=(double)arr[i][1];
             if(x2-x1!=0)
-            {   if(x-x1==0)return false;
+            {   
                 if(((y-y1)/(x-x1))!=slope)return false;
             }
             else{
