@@ -36,6 +36,10 @@ struct Node
 
 // This function finds predecessor and successor of key in BST.
 // It sets pre and suc as predecessor and successor respectively
+
+//Khud kiya
+//Not sure of TC
+
 class Solution
 {
     public:
@@ -60,28 +64,11 @@ class Solution
             preorder(root->right,ans,false,val,key);
         }
     }
-    
-    void traversal(Node*root,int key)
-    {
-        if(root==NULL)return;
-        if((root->key)==key)
-        {
-            ptr=root;
-            cout<<root->key<<endl;
-            return;
-        }
-        traversal(root->left,key);
-        traversal(root->right,key);
-    }
+
     
     void findPreSuc(Node* root, Node*& pre, Node*& suc, int key)
     {
-        // Your code goes here
-        // Node*ptr=NULL;
-        // traversal(root,key);
-        
-        // if(ptr==NULL)cout<<"NULL";
-        // else cout<<ptr->key<<endl;
+      
         int val=INT_MIN;
         preorder(root,pre,true,val,key);
         val=INT_MAX;
