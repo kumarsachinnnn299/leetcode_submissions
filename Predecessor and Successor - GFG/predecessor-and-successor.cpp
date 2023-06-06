@@ -37,46 +37,38 @@ struct Node
 // This function finds predecessor and successor of key in BST.
 // It sets pre and suc as predecessor and successor respectively
 
-//Khud kiya
-//Not sure of TC
+// https://www.youtube.com/watch?v=-TNrPWDqWIg
 
 class Solution
 {
     public:
-    Node*ptr;
-    void preorder(Node*root,Node*& ans, bool isleft,int& val,int key)
-    {
-        if(root==NULL)return;
-        if(isleft)
-        {    if((root->key)>val&&(root->key)<key){
-                ans=root;
-                val=root->key;
-            }
-            preorder(root->left,ans,true,val,key);
-            preorder(root->right,ans,true,val,key);
-        }
-        else{
-             if((root->key)<val&&(root->key)>key){
-                ans=root;
-                val=root->key;
-            }
-            preorder(root->left,ans,false,val,key);
-            preorder(root->right,ans,false,val,key);
-        }
-    }
-
-    
     void findPreSuc(Node* root, Node*& pre, Node*& suc, int key)
     {
-      
-        int val=INT_MIN;
-        preorder(root,pre,true,val,key);
-        val=INT_MAX;
-        preorder(root,suc,false,val,key);
-        
-        
-        
-        
+        // Your code goes here
+        Node*temp=root;
+        while(temp)
+        {
+            if((temp->key)>=key)
+            {
+                temp=temp->left;
+            }
+            else{
+                pre=temp;
+                temp=temp->right;
+            }
+        }
+        temp=root;
+        while(temp)
+        {
+            if((temp->key)<=key)
+            {
+                temp=temp->right;
+            }
+            else{
+                suc=temp;
+                temp=temp->left;
+            }
+        }
     }
 };
 
