@@ -8,6 +8,8 @@ using namespace std;
 // } Driver Code Ends
 //User function Template for C++
 
+//Done by self not a good solution
+
 class Solution
 {
 public:
