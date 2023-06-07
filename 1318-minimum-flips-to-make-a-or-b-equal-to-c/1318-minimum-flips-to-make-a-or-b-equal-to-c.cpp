@@ -1,3 +1,7 @@
+
+//Very easy question
+//Khud kiya
+
 class Solution {
 public:
     int minFlips(int a, int b, int c) {
