@@ -8,7 +8,8 @@ using namespace std;
 // } Driver Code Ends
 //User function Template for C++
 
-//Done by self not a good solution
+//good question
+// https://www.youtube.com/watch?v=Y_f79vPHn5g&t=187s
 
 class Solution
 {
@@ -16,15 +17,34 @@ public:
     string kthPermutation(int n, int k)
     {
         // code here
-        string s="";
-        for(int i=1;i<=n;i++)
+        vector<int>fact(n+1,1);
+        for(int i=2;i<=n;i++)fact[i]=i*fact[i-1];
+        vector<int>vis(n+1);
+        string ans="";
+        int temp=n;
+        while(ans.size()<n)
         {
-            s+=to_string(i);
+            int row=k/fact[temp-1];
+            if(k%fact[temp-1])row++;
+            for(int i=1;i<=n;i++)
+            {
+                if(vis[i]==0)
+                {
+                   row--;
+                }
+                
+                if(row==0)
+                {
+                    ans+=to_string(i);
+                    vis[i]=1;
+                    break;
+                }
+            }
+            k%=fact[temp-1];
+            if(k==0)k=fact[temp-1];
+            temp--;
         }
-        k--;
-        while(k--){
-        next_permutation(s.begin(),s.end());}
-        return s;
+       return ans;
     }
 };
 
