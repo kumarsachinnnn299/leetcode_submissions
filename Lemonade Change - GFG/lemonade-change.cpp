@@ -4,6 +4,9 @@ using namespace std;
 
 
 // } Driver Code Ends
+
+//Khud kiya
+
 class Solution {
   public:
     bool lemonadeChange(int N, vector<int> &arr) {
