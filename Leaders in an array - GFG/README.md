@@ -2,8 +2,6 @@
 ## Easy
 <div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given an array A of positive integers. Your task is to find the leaders in the array.&nbsp;An element of array is leader if it is greater than or equal to all the elements to its right side. The rightmost element is always a leader.&nbsp;</span></p>
 
-<p>&nbsp;</p>
-
 <p><span style="font-size:18px"><strong>Example 1:</strong></span></p>
 
 <pre><span style="font-size:18px"><strong>Input:
@@ -26,7 +24,12 @@ included.</span>
 </strong>n = 5
 A[] = {1,2,3,4,0}
 <strong>Output: </strong>4 0
-</span></pre>
+<strong>Explanation: </strong>The first leader is 4
+as all the other numbers aren't greater than
+the other elements to their right side.
+The second leader is 0 as there are no elements
+at right side so its greater itself.</span>
+</pre>
 
 <p>&nbsp;</p>
 
@@ -38,9 +41,7 @@ You don't need to read input or print anything.&nbsp;The task is to complete the
 <p><span style="font-size:18px"><strong>Expected Time Complexity:</strong></span><span style="font-size:18px">&nbsp;O(n)</span><br>
 <span style="font-size:18px"><strong>Expected Auxiliary Space:</strong>&nbsp;O(n)</span></p>
 
-<p>&nbsp;</p>
-
 <p><span style="font-size:18px"><strong>Constraints:</strong><br>
-1 &lt;= n&nbsp;&lt;= 10<sup>7</sup><br>
-0 &lt;= A<sub>i</sub> &lt;= 10<sup>7</sup></span></p>
+1 &lt;= n&nbsp;&lt;= 10<sup>5</sup><br>
+0 &lt;= A<sub>i</sub> &lt;= 10<sup>9</sup></span></p>
 </div>
