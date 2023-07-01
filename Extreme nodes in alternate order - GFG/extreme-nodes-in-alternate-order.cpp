@@ -92,6 +92,11 @@ struct Node
 };
 */
 
+//Left view and right view of tree
+ //DFS
+//  https://www.youtube.com/watch?v=Lcre2oZh5YM
+//Can also be done by level order traversal
+
 class Solution{
   public:
     /* Function to print nodes of extreme corners
