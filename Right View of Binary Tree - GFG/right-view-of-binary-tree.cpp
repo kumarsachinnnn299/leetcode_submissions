@@ -38,7 +38,16 @@ struct Node
 
 // Should return  right view of tree
 
-//By level order traversal
+
+//DFS
+
+void helper(Node*root,int idx, vector<int>&ans)
+{
+    if(root==NULL)return;
+    if(ans.size()<=idx)ans.push_back(root->data);
+    helper(root->right,idx+1,ans);
+    helper(root->left,idx+1,ans);
+}
 
 class Solution
 {
@@ -48,21 +57,7 @@ class Solution
     {
        // Your Code here
        vector<int>ans;
-   if(root==NULL)return ans;
-   queue<Node*>q;
-   q.push(root);
-   while(!q.empty())
-   {
-       int s=q.size();
-       for(int i=0;i<s;i++)
-      {
-          auto temp=q.front();
-          q.pop();
-          if(temp->right)q.push(temp->right);
-          if(temp->left)q.push(temp->left);
-          if(i==0)ans.push_back(temp->data);
-      }
-   }
+   helper(root, 0, ans);
    return ans;
     }
 };
