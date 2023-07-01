@@ -14,17 +14,18 @@ class Solution{
     vector<int> leaders(int a[], int n){
         // Code here
         vector<int>ans;
-        ans.push_back(a[n-1]);
-        int temp=a[n-1];
+        vector<int>lead(n,0);
+        lead[n-1]=a[n-1];
         for(int i=n-2;i>=0;i--)
         {
-            if(a[i]>=temp)
-            {
-                temp=a[i];
-                ans.push_back(temp);
-            }
+            lead[i]=max(a[i],lead[i+1]);
         }
-        reverse(ans.begin(),ans.end());
+        
+        for(int i=0;i<n;i++)
+        {
+            if(a[i]>=lead[i])ans.push_back(a[i]);
+        }
+        
         return ans;
         
         
