@@ -126,28 +126,28 @@ struct Node
     }
 };
  */
-
-//By level order traversal
+ 
+ 
+ //DFS
+//  https://www.youtube.com/watch?v=Lcre2oZh5YM
 
 //Function to return a list containing elements of left view of the binary tree.
+
+
+void helper(Node*root,int idx, vector<int>&ans)
+{
+    if(root==NULL)return;
+    if(ans.size()<=idx)ans.push_back(root->data);
+    helper(root->left,idx+1,ans);
+    helper(root->right,idx+1,ans);
+}
+
 vector<int> leftView(Node *root)
 {
    // Your code here
    vector<int>ans;
-   if(root==NULL)return ans;
-   queue<Node*>q;
-   q.push(root);
-   while(!q.empty())
-   {
-       int s=q.size();
-       for(int i=0;i<s;i++)
-      {
-          auto temp=q.front();
-          q.pop();
-          if(temp->left)q.push(temp->left);
-          if(temp->right)q.push(temp->right);
-          if(i==0)ans.push_back(temp->data);
-      }
-   }
+   helper(root, 0, ans);
    return ans;
+   
+   
 }
