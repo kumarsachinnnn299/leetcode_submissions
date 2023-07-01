@@ -127,6 +127,8 @@ struct Node
 };
  */
 
+//By level order traversal
+
 //Function to return a list containing elements of left view of the binary tree.
 vector<int> leftView(Node *root)
 {
