@@ -97,6 +97,13 @@ void printInorder(Node* root)
 
 
 // } Driver Code Ends
+
+
+//Based on Top view and bottom vie of tree
+//Horizontal distance concept
+//Level order traversal
+// https://www.youtube.com/watch?v=wTloJwckQTU
+
 class Solution
 {
     public:
