@@ -110,6 +110,9 @@ struct Node{
     Node *left,*right;
 };
 */
+
+// https://www.youtube.com/watch?v=cTQphmYnWOI
+
 vector <int> diagonalSum(Node* root) {
     // Add your code here
     vector<int>ans;
