@@ -33,19 +33,23 @@ class Solution
     int partition (int arr[], int low, int high)
     {
        // Your code here
-       int piv=arr[high];
-       int i=low-1;
-       for(int j=low;j<high;j++)
+      
+       int piv=arr[low];
+       int i=low,j=high;
+        while(i<j)
        {
-           if(arr[j]<piv){
-               i++;
-               swap(arr[j],arr[i]);
-              
-           }
+        while(arr[i]<=piv)i++;
+        while(arr[j]>piv)j--;
+        if(i<j)
+        {
+            swap(arr[i],arr[j]);
+        }
+        
        }
-       swap(arr[i+1],arr[high]);
-       return i+1;
        
+        
+       swap(arr[low],arr[j]);
+       return j ;
     }
 };
 
