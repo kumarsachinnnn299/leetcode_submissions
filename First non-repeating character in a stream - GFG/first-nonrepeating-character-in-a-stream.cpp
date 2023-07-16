@@ -5,6 +5,9 @@ using namespace std;
 // } Driver Code Ends
 class Solution {
 	public:
+	    
+	    //Khud kiya
+	
 		string FirstNonRepeating(string A){
 		    // Code here
 		    
