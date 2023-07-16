@@ -14,13 +14,10 @@ class Solution {
 		    string ans="";
 		    vector<int>arr(26);
 		     string prev;
-		     queue<char>q;
-		     
 		    int idx=0;
 		   for(auto i:A)
 		   {    
 		       arr[i-'a']++;
-		      // q.push(i);
 		      prev+=i;
 		       while(idx<prev.size()&&arr[prev[idx]-'a']!=1)
 		       {
@@ -28,8 +25,6 @@ class Solution {
 		       }
 		       if(idx==prev.size())ans+='#';
 		       else ans+=prev[idx];
-		   
-		      
 		       
 		   }
 		    return ans;
