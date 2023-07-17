@@ -10,10 +10,9 @@
  */
 class Solution {
 public:
-    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+    ListNode* addTwoNumbers(ListNode* r1, ListNode* r2) {
         int prev=0;
-        stack<int>st;
-        ListNode* r1=l1,*r2=l2;
+        // ListNode* r1=l1,*r2=l2;
       vector<int>n1,n2,n3;
         while(r1)
         {   n1.push_back(r1->val);
@@ -23,12 +22,7 @@ public:
         {   n2.push_back(r2->val);
              r2=r2->next;
         }
-        
-        // for(auto i:n1)cout<<i<<' ';
-        // cout<<endl;
-        // for(auto i:n2)cout<<i<<' ';
-        // cout<<endl;
-        
+           
        int c1=n1.size()-1,c2=n2.size()-1;
         while(c1>=0&&c2>=0)
         {
