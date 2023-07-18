@@ -10,26 +10,20 @@ using namespace std;
 
 class Solution{
   public:
-    int longestPalinSubseq(string text1) {
+    int longestPalinSubseq(string s1) {
         //code here
-        string text2=text1;
-        reverse(text2.begin(),text2.end());
-        vector<vector<int>>dp(text1.size()+1,vector<int>(text2.size()+1));
-        int ans=INT_MAX;
-        for(int i=1;i<=text1.size();i++)
+        string s2=s1;
+        reverse(s2.begin(),s2.end());
+        vector<vector<int>>dp(s1.size()+1,vector<int>(s1.size()+1));
+        for(int i=1;i<=s1.size();i++)
         {
-            for(int j=1;j<=text2.size();j++)
+            for(int j=1;j<=s1.size();j++)
             {
-                if(text1[i-1]==text2[j-1])
-                {
-                    dp[i][j]=dp[i-1][j-1]+1;
-                }
-                else{
-                    dp[i][j]=max(dp[i-1][j],dp[i][j-1]);
-                }
+                if(s1[i-1]==s2[j-1])dp[i][j]=1+dp[i-1][j-1];
+                else dp[i][j]=max(dp[i-1][j],dp[i][j-1]);
             }
         }
-        return dp[text1.size()][text2.size()];
+        return dp[s1.size()][s1.size()];
     }
 };
 
