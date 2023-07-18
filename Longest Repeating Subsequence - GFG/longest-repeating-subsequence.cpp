@@ -17,7 +17,7 @@ class Solution {
 		    {
 		        for(int j=1;j<=str.size();j++)
 		        {
-		            if(str[i-1]==str2[j-1]&&(i-1!=j-1))
+		            if(str[i-1]==str2[j-1]&&(i!=j))
 		            {
 		                dp[i][j]=1+dp[i-1][j-1];
 		            }
