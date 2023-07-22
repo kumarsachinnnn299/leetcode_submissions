@@ -51,13 +51,13 @@ class Solution
          if(mp[ptr->data])
          {
              prev->next=ptr->next;
-             ptr=ptr->next;
+             
          }
          else {
              mp[ptr->data]++;
              prev=ptr;
-             ptr=ptr->next;
          }
+             ptr=ptr->next;
      }
      return head;
     }
