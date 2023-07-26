@@ -1,3 +1,5 @@
+//Max value 10^7 ho skti h given h last m 
+
 class Solution {
 public:
     
@@ -20,7 +22,7 @@ public:
     }
     
     int minSpeedOnTime(vector<int>& dist, double hour) {
-        int s=1,e=1e7;
+        int s=1,e=1e8;
         int ans=-1;
         while(s<=e)
         {
