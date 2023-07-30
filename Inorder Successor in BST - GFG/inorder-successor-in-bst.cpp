@@ -111,19 +111,19 @@ class Solution{
   public:
     // returns the inorder successor of the Node x in BST (rooted at 'root')
     
-    void inorder(Node*root,Node*x,vector<Node*>&arr)
+    void inorder(Node*root,vector<Node*>&arr)
     {
         if(!root)return;
-        inorder(root->left,x,arr);
+        inorder(root->left,arr);
         arr.push_back(root);
-        inorder(root->right,x,arr);
+        inorder(root->right,arr);
     }
     
     Node * inOrderSuccessor(Node *root, Node *x)
     {
         //Your code here
         vector<Node*>arr;
-        inorder(root,x,arr);
+        inorder(root,arr);
         for(int i=0;i<arr.size();i++ )
         {
             if(arr[i]==x)
