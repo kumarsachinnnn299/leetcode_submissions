@@ -43,6 +43,15 @@ struct Node
 
 */
 
+/*
+
+approach: 1) reverse linked list
+            2) add 1 to ll simply 
+            3) consider the case when 99 or 999 , here a new node needs to be added
+            4) again reverse the linked list
+
+*/
+
 class Solution
 {
     public:
