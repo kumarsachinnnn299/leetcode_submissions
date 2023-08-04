@@ -1,23 +1,34 @@
+// https://www.youtube.com/watch?v=_iIK7Gu7MNo&t=509s
+
 class Solution {
 public:
+    
     int dp[301];
     
-    int helper(string s,int start,set<string>&st)
-    {   if(start==s.size())return 1;
-        if(dp[start]!=-1)return dp[start];
+    bool helper(int idx,string s,unordered_set<string>&st)
+    {
+        if(idx==s.size())return 1;
+        if(dp[idx]!=-1)return dp[idx];
         string temp="";
-        for(int i=start;i<s.size();i++)
+        for(int j=idx;j<s.size();j++)
         {
-            temp+=s[i];
-            if(st.find(temp)!=st.end()&&helper(s,i+1,st))return dp[start]= 1;
+            temp+=s[j];
+            if(st.find(temp)!=st.end())
+            {
+                if(helper(j+1,s,st))return dp[idx]= true;
+            }
         }
-        return dp[start]=0;
+        return dp[idx]= false;
     }
     
-    bool wordBreak(string s, vector<string>& wordDict) {
-        set<string>st;
+    
+    bool wordBreak(string s, vector<string>& arr) {
+        
         memset(dp,-1,sizeof dp);
-        for(auto i:wordDict)st.insert(i);
-        return helper(s,0,st);
+        unordered_set<string>st;
+        for(auto i:arr)st.insert(i);
+        return helper(0,s,st);
+        
     }
+    
 };
