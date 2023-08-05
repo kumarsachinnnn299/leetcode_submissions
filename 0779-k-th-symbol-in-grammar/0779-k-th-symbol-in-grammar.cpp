@@ -1,3 +1,6 @@
+// https://www.youtube.com/watch?v=5P84A0YCo_Y&list=PL_z_8CaSLPWeT1ffjiImo0sYTcnLzo-wY&index=10
+//Recursion playlist aditya verma
+
 class Solution {
 public:
     int kthGrammar(int n, int k) {
