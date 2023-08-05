@@ -51,6 +51,9 @@ public:
 /* The below method sorts the stack s 
 you are required to complete the below method */
 
+//Adarsh ki recursion ki playlist se
+//Similar to sort array using recursion
+
 void insert(stack<int>&s,int val)
 {
     if(s.size()==0||s.top()<=val){
