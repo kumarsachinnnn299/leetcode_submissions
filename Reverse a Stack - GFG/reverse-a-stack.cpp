@@ -8,32 +8,35 @@ using namespace std;
 // } Driver Code Ends
 //User function Template for C++
 
-// https://www.geeksforgeeks.org/reverse-a-stack-using-recursion/
+//Ad
 
 class Solution{
 public:
-
+    
     void insert(stack<int>&st,int val)
     {
-        if(st.size())
-        {
-            int temp=st.top();
-            st.pop();
-            insert(st,val);
-            st.push(temp);
-        
+        if(st.size()==0){
+            st.push(val);
+            return;
         }
-        else st.push(val);
+        int temp=st.top();
+        st.pop();
+        insert(st,val);
+        st.push(temp);
+        
     }
 
     void Reverse(stack<int> &st){
-        if(st.size())
-        {
-            int temp=st.top();
-            st.pop();
-            Reverse(st);
-            insert(st,temp);
-        }
+        
+        if(st.size()==0)return;
+        
+        int temp=st.top();
+        st.pop();
+        Reverse(st);
+        insert(st,temp);
+        
+        
+        
     }
 };
 
