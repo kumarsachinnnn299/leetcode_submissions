@@ -11,34 +11,25 @@ class Solution
 {
     public:
     //Function to delete middle element of a stack.
-    void deleteMid(stack<int>&s, int sizeOfStack)
+    
+    void helper(stack<int>&st,int s,int n)
+    {
+        if((n%2)&&(s==(n+1)/2)||(n%2==0)&&(s==(n/2)+1))
+        {
+            st.pop();
+            return;
+        }
+        
+        int temp=st.top();
+        st.pop();
+        helper(st,s+1,n);
+        st.push(temp);
+    }
+    
+    void deleteMid(stack<int>&s, int n)
     {
         // code here.. 
-        string str="";
-        int idx=(s.size()+1)/2;
-        while(!s.empty())
-        {
-            str+='$';
-            str+=to_string(s.top());
-            s.pop();
-        }
-        
-        // int idx=(s
-        int c=0;
-        string n="";
-        for(int i=str.size()-1;i>=0;i--)
-        {
-           if(str[i]!='$')
-           {
-               n=str[i]+n;
-           }
-           else{
-               c++;
-               if(c!=idx)s.push(stoi(n));
-               n="";
-           }
-        }
-        
+        helper(s,1,n);
         
     }
 };
