@@ -1,51 +1,20 @@
+// treating as single sorted matrix
+
 class Solution {
 public:
-    bool searchMatrix(vector<vector<int>>& grid, int target) {
-        int r=grid.size(),c=grid[0].size();
-        int s=0,e=grid.size()-1;
-        int tr=-1;
-        while(s<=e)
-        {
-            int mid=s+(e-s)/2;
-            if(grid[mid][c-1]<target)
-            { tr=mid;
-                s=mid+1;
-               
-            }
-            
-            
-            else if(grid[mid][0]>target){
-                tr=mid;
-                e=mid-1;
-                
-            }
-            else{
-                tr=mid;
-                break;
-            }
-        }
+    bool searchMatrix(vector<vector<int>>& nums, int target) {
         
-        s=0,e=c-1;
+        int r=nums.size(),c=nums[0].size();
+        
+        int s=0,e=(r*c)-1;
         while(s<=e)
         {
             int mid=s+(e-s)/2;
-            if(grid[tr][mid]<target)
-            { 
-                s=mid+1;
-               
-            }
-            else if(grid[tr][mid]==target)return true;
-            
-            else{
-                
-                e=mid-1;
-                
-            }
+            if(nums[mid/c][mid%c]==target)return true;
+            else if(nums[mid/c][mid%c]>target)e=mid-1;
+            else s=mid+1;
         }
         return false;
-        
-        
-        
         
     }
 };
