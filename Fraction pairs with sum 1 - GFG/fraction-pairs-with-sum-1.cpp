@@ -5,6 +5,9 @@ using namespace std;
 
 // } Driver Code Ends
 //User function Template for C++
+
+// https://www.youtube.com/watch?v=8I0KgBTSFcQ
+
 class Solution
 {
     public:
@@ -15,11 +18,11 @@ class Solution
         int ans=0;
         for(int i=0;i<n;i++)
         {   int t=__gcd(num[i],den[i]);//gcd se num and den ko divide krne par wo lowest form m aajayega fraction
-            int currn=num[i]/t;
-            int currd=den[i]/t;
+            int currn=num[i]/t;//jis numerator pe hum abhi h
+            int currd=den[i]/t;//Jis denominator pe hum abhi h
             
-            int reqn=currd-currn;
-            int reqd=currd;
+            int reqn=currd-currn;//Numerator required to make sum 1
+            int reqd=currd;//denominator required to make sum 1
             if(mp.find({reqn,reqd})!=mp.end())ans+=mp[{reqn,reqd}];
             mp[{num[i]/t,den[i]/t}]++;
         }
