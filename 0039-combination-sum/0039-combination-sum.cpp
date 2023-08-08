@@ -16,6 +16,8 @@ public:
         temp.push_back(nums[idx]);
         sum+=nums[idx];
         helper(idx,nums,sum,temp,ans,target);
+         sum-=nums[idx];
+        temp.pop_back();
         
     }
     
