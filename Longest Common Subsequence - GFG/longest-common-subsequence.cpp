@@ -10,24 +10,24 @@ class Solution
 {
     public:
     //Function to find the length of longest common subsequence in two strings.
-    int lcs(int x, int y, string s1, string s2)
+    int lcs(int n, int m, string s1, string s2)
     {
         // your code here
-         vector<vector<int>>dp(x+1,vector<int>(y+1));
-        for(int i=1;i<=s1.size();i++)
+        vector<vector<int>>dp(n+1,vector<int>(m+1));
+        for(int i=1;i<=n;i++)
         {
-            for(int j=1;j<=s2.size();j++)
+            for(int j=1;j<=m;j++)
             {
                 if(s1[i-1]==s2[j-1])
                 {
-                    dp[i][j]=dp[i-1][j-1]+1;
+                    dp[i][j]=1+dp[i-1][j-1];
                 }
                 else{
-                    dp[i][j]=max(dp[i][j-1],dp[i-1][j]);
+                    dp[i][j]=max(dp[i-1][j],dp[i][j-1]);
                 }
             }
         }
-        return dp[s1.size()][s2.size()];
+        return dp[n][m];
     }
 };
 
@@ -35,15 +35,15 @@ class Solution
 //{ Driver Code Starts.
 int main()
 {
-    int t,n,k,x,y;
+    int t,n,m;
     cin>>t;
     while(t--)
     {
-        cin>>x>>y;          // Take size of both the strings as input
+        cin>>n>>m;          // Take size of both the strings as input
         string s1,s2;
         cin>>s1>>s2;        // Take both the string as input
         Solution ob;
-        cout << ob.lcs(x, y, s1, s2) << endl;
+        cout << ob.lcs(n, m, s1, s2) << endl;
     }
     return 0;
 }
