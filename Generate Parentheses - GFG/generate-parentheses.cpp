@@ -11,6 +11,12 @@ vector<string> AllParenthesis(int n) ;
 
 // N is the number of pairs of parentheses
 // Return list of all combinations of balanced parantheses
+
+//Fraz recursion playlist
+//https://www.youtube.com/watch?v=eyCj_u3PoJE&t=3s
+//Each place has two option to select- '('or ')'
+//Breaking condition bas thodi sochni h ki bas condition ky a hogi
+
 class Solution
 {
     public:
