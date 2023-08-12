@@ -47,7 +47,7 @@ public:
        
     }
     
-    void helper(int r,vector<vector<int>>&vis,vector<int>&temp,int n,vector<vector<int>>&ans)
+    void helper(int r,vector<vector<int>>&vis,vector<int>&temp,int n,vector<vector<int>>&ans,vector<int>&col,vector<int>&tl,vector<int>&tr)
     {
         if(r==n)
         {
@@ -57,13 +57,20 @@ public:
         
         for(int c=0;c<n;c++)
         {
-              if(issafe(r,c,vis))
+              if(col[c]==0&&tl[r-c+n-1]==0&&tr[r+c]==0)
         {
             vis[r][c]=1;
+            col[c]=1;
+            tl[r-c+n-1]=1;
+            tr[r+c]=1;
+            
             temp.push_back(c+1);
-            helper(r+1,vis,temp,n,ans);
+            helper(r+1,vis,temp,n,ans,col,tl,tr);
             vis[r][c]=0;
             temp.pop_back();
+            col[c]=0;
+            tl[r-c+n-1]=0;
+            tr[r+c]=0;
         }
         }
         
@@ -74,9 +81,9 @@ public:
     vector<vector<int>> nQueen(int n) {
         // code here
         vector<vector<int>>vis(n,vector<int>(n)),ans;
-        vector<int>temp;
+        vector<int>temp,col(n),tl(2*n),tr(2*n);//tl->topleft, tr->topright
         
-        helper(0,vis,temp,n,ans);
+        helper(0,vis,temp,n,ans,col,tl,tr);
         return ans;
     }
 };
