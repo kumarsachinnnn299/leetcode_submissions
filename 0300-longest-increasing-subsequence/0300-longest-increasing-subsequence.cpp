@@ -1,15 +1,30 @@
+
+// https://www.youtube.com/watch?v=mNrzyuus2h4&t=83s
+
 class Solution {
 public:
-    int lengthOfLIS(vector<int>& nums) {
-        vector<int>arr;
-        arr.push_back(nums[0]);
-        for(int i=1;i<nums.size();i++){
-            if(nums[i]>arr[arr.size()-1])arr.push_back(nums[i]);
-            else{
-                int idx=lower_bound(arr.begin(),arr.end(),nums[i])-arr.begin();
-                arr[idx]=nums[i];
-            }
+    
+    int helper(int idx,vector<int>&nums,vector<int>&dp)
+    {   
+        if(dp[idx]!=-1)return dp[idx];
+        int ans=1;
+        for(int i=0;i<idx;i++)
+        {   if(nums[idx]>nums[i])
+            ans=max(ans,helper(i,nums,dp)+1);
         }
-        return arr.size();
+        return dp[idx]=ans;
+    }
+    
+    int lengthOfLIS(vector<int>& nums) {
+        vector<int>dp(nums.size(),-1);
+        
+        int ans=1;
+        
+        for(int i=0;i<nums.size();i++)
+        {
+            ans=max(ans,helper(i,nums,dp));
+        }
+        return ans;
+        
     }
 };
