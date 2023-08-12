@@ -8,6 +8,7 @@ using namespace std;
 // } Driver Code Ends
 // User function template for C++
 
+
 class Solution{
     public:
     
@@ -15,7 +16,7 @@ class Solution{
     int ym[4]={0,0,1,-1};
     char moves[4]={'U','D','R','L'};
     
-    void helper(int r,int c,vector<vector<int>>&m,vector<string>&ans,int n,string &temp,vector<vector<int>>vis)
+    void helper(int r,int c,vector<vector<int>>&m,vector<string>&ans,int n,string &temp,vector<vector<int>>&vis)
     {
         if(r>=n||r<0||c>=n||c<0||m[r][c]==0||vis[r][c])return ;
         if(r==n-1&&c==n-1){
@@ -33,6 +34,7 @@ class Solution{
             temp2+=moves[i];
             helper(tx,ty,m,ans,n,temp2,vis);
         }
+        vis[r][c]=0;
        
         
     }
