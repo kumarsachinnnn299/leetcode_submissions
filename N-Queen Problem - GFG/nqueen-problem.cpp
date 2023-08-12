@@ -13,7 +13,7 @@ using namespace std;
 
 class Solution{
 public:
-    int rf[10],cf[10],df[10];
+
     
     bool issafe(int r,int c,vector<vector<int>>&vis)
     {
@@ -75,9 +75,6 @@ public:
         // code here
         vector<vector<int>>vis(n,vector<int>(n)),ans;
         vector<int>temp;
-        memset(rf,0,sizeof(rf));
-        memset(cf,0,sizeof(cf));
-        memset(df,0,sizeof(df));
         
         helper(0,vis,temp,n,ans);
         return ans;
