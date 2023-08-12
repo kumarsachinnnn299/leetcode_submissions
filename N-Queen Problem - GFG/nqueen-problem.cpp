@@ -15,37 +15,6 @@ class Solution{
 public:
 
     
-    bool issafe(int r,int c,vector<vector<int>>&vis)
-    {
-       //up
-       int i=r,j=c;
-       while(i>=0){
-           if(vis[i][c])return false;
-           i--;
-       }
-       i=r;
-       //topright
-       while(j<vis[0].size()&&i>=0)
-       {
-           if(vis[i][j])return false;
-           j++;
-           i--;
-       }
-       i=r;
-       j=c;
-       
-  
-    
-    while(i>=0&&j>=0)
-    {
-         if(vis[i][j])return false;
-           i--;
-           j--;
-    }
-    return true;
-    
-       
-    }
     
     void helper(int r,vector<vector<int>>&vis,vector<int>&temp,int n,vector<vector<int>>&ans,vector<int>&col,vector<int>&tl,vector<int>&tr)
     {
