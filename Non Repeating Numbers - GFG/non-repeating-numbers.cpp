@@ -4,24 +4,34 @@ using namespace std;
 
 // } Driver Code Ends
 
-// https://www.youtube.com/watch?v=pnx5JA9LNM4&list=PL-Jc9J83PIiFJRioti3ZV7QabwoJK6eKe&index=9
+// https://www.youtube.com/watch?v=nSff-h4h68A
+//Bit manipulation
 class Solution
 {
 public:
     vector<int> singleNumber(vector<int> nums) 
     {
         // Code here.
-        int a=0,b=0;
-        int Xor=0;
-        for(auto i:nums)Xor^=i;
-        int rmsbmask=Xor&(-Xor);
-        for(auto i:nums)
-        {
-            if((rmsbmask&i)==0)a^=i;
-            else b^=i;
-        }
-        if(a>b)return {b,a};
-        return {a,b};
+        int xorv=nums[0];
+        for(int i=1;i<nums.size();i++)xorv^=nums[i];
+       int setbit=0;
+       for(int i=0;i<=32;i++)
+       {
+            int num=1<<i;
+            if(num&xorv)
+            {
+                setbit=num;
+                break;
+            }
+       }
+       int n1=0,n2=0;
+       for(auto i:nums)
+       {
+           if(i&setbit)n1^=i;
+           else n2^=i;
+       }
+       if(n1<n2)return {n1,n2};
+       return {n2,n1};
     }
 };
 
