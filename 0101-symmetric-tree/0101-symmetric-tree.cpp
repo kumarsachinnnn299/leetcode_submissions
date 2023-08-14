@@ -9,46 +9,32 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+
+
+// https://www.youtube.com/watch?v=nseJwpKvQuA
+//Just right a fn how to check if two trees are same 
+//Then just change the movement as per the mirror tree
+
+
 class Solution {
 public:
-     vector<int>lefta,righta;
-    void preorder(TreeNode*root,bool flag){
-        if(flag)
+    bool helper(TreeNode*t1,TreeNode*t2)
+    {
+        if(t1!=NULL&&t2!=NULL)
         {
-            if(root==NULL){
-                lefta.push_back(200);
-                return;
+            bool f1=helper(t1->left,t2->right);
+            bool f2=helper(t1->right,t2->left);
+            if(t1->val==t2->val&&f1&&f2)
+            {
+                return true;
             }
-            lefta.push_back(root->val);
-            preorder(root->left,true);
-            preorder(root->right,true);
-            
+            else return false;
         }
-        else{
-            if(root==NULL){
-                righta.push_back(200);
-                return;}
-            righta.push_back(root->val);
-            preorder(root->right,false);
-            preorder(root->left,false);
-            
-        }
-            
+        else if(t1==NULL&&t2==NULL)return true;
+        return false;
     }
     
     bool isSymmetric(TreeNode* root) {
-       
-        preorder(root->left,true);
-        preorder(root->right,false);
-        for(auto i:lefta)cout<<i<<' ';
-        cout<<endl;
-        for(auto i:righta)cout<<i<<' ';
-        
-        if(lefta.size()!=righta.size())return false;
-        for(int i=0;i<lefta.size();i++)
-        {
-            if(righta[i]!=lefta[i])return false;
-        }
-        return true;
+       return helper(root,root);
     }
 };
