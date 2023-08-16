@@ -40,13 +40,13 @@ class Solution
             return;
         }
         
-        if(c==0)
-        {
-            s+='(';
-            o--;
-            helper(c,o,ans,s);
-        }
-        else{
+        // if(o==0)
+        // {
+        //     s+='(';
+        //     o--;
+        //     helper(c,o,ans,s);
+        // }
+        // else{
             
             s+='(';
             o--;
@@ -57,7 +57,7 @@ class Solution
              c--;
              helper(c,o,ans,s);
              
-        }
+        // }
         
     }
     
