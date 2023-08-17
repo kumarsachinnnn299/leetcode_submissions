@@ -6,7 +6,7 @@ public:
     vector<list<pair<int,int>>>arr;
     int n;
     MyHashMap() {
-        int n=1e6+1;//kuch bhi le skte h
+        int n=1000001;//kuch bhi le skte h
         arr.resize(n);
     }
     
