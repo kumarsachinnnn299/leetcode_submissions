@@ -5,6 +5,10 @@ using namespace std;
 
 // } Driver Code Ends
 //User function template for C++
+
+//Khud kiya 
+//Similar to generate parenthesis
+
 class Solution{
 public:	
     
