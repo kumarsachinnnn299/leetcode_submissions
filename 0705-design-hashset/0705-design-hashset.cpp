@@ -1,21 +1,50 @@
+// https://www.youtube.com/watch?v=IjxkD8L2cOM&list=PLjkkQ3iH4jy-QRceXhVwYjJ7ToNsBs0Il&index=9
+//Fraz
+//Throuh doubly ll
+
 class MyHashSet {
 public:
-    int arr[1000001];
+    
+    vector<list<int>>arr;//Doubly linked list in C++
+    int n;
     
     MyHashSet() {
+        n=10;
+        arr.resize(n);
+    }
+    
+    int hash(int key)
+    {
+        return key%n;
+    }
+    
+    list<int>::iterator search(int key)
+    {
+        int i=hash(key);
+       return find(arr[i].begin(),arr[i].end(),key);
         
     }
     
     void add(int key) {
-        arr[key]=1;
+        if(contains(key))return;
+        int i=hash(key);
+        arr[i].push_back(key);
     }
     
     void remove(int key) {
-        if(arr[key])arr[key]=0;
+        if(!contains(key))return;
+        int i=hash(key);
+        auto temp=search(key);
+        arr[i].erase(temp);
     }
     
     bool contains(int key) {
-        return arr[key]>0;
+        int i=hash(key);
+        if(search(key)!=arr[i].end())
+        {
+            return true;
+        }
+        return false;
     }
 };
 
