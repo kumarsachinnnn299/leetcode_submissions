@@ -8,24 +8,21 @@ class Solution{
     public:
     //Function to find if there exists a triplet in the 
     //array A[] which sums up to X.
-    
-    
-    // O n^2 with constant space
-    // https://www.youtube.com/watch?v=PiId4tgzcho
-    
-    bool find3Numbers(int A[], int n, int X)
+    bool find3Numbers(int arr[], int n, int X)
     {
         //Your Code Here
-        sort(A,A+n);
-        int l,r=n-1;
+        sort(arr,arr+n);
         for(int i=0;i<n-2;i++)
-        {   l=i+1;
-            r=n-1;
-            while(l<r)
+        {
+            
+            int s=i+1,e=n-1;
+               
+            while(s<e)
             {
-                if((A[i]+A[l]+A[r])==X)return true;
-                else if((A[i]+A[l]+A[r])<X)l++;
-                else r--;
+                if(arr[i]+arr[s]+arr[e]>X)e--;
+                else if(arr[i]+arr[s]+arr[e]<X)s++;
+                else return true;
+               
             }
         }
         return false;
