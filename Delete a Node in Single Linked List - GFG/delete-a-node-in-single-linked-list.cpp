@@ -94,15 +94,9 @@ Node* deleteNode(Node *head,int x)
     {
         if(c==x)
         {
-         if(curr->next==NULL)
-         {
-             prev->next=NULL;
-             break;
-         }
-         else{
              prev->next=curr->next;
              break;
-         }
+        
         }
         c++;
         prev=curr;
