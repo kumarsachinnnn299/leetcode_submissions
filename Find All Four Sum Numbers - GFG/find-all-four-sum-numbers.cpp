@@ -5,6 +5,8 @@ using namespace std;
 
 // } Driver Code Ends
 // User function template for C++
+//Khud kiya
+
 
 class Solution{
     public:
