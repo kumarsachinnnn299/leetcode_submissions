@@ -9,7 +9,7 @@ public:
     int n;
     
     MyHashSet() {
-        n=10;
+        n=100;
         arr.resize(n);
     }
     
