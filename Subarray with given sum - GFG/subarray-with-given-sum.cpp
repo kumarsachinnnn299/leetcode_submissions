@@ -4,38 +4,31 @@ using namespace std;
 
 
 // } Driver Code Ends
-
-// https://www.youtube.com/watch?v=Ofl4KgFhLsM
 class Solution
 {
     public:
     //Function to find a continuous sub-array which adds up to a given number.
-    vector<int> subarraySum(vector<int>arr, int n, long long S)
+    vector<int> subarraySum(vector<int>arr, int n, long long ts)
     {
         // Your code here
-        // vector<int>ans;
-        if(S==0)return {-1};
-        long long cursum=arr[0];
+        if(ts==0)return {-1};
         int s=0,e=0;
+        long long sum=arr[0];
+        
         while(e<n)
-        {   
-
-            if(cursum==S)return {s+1,e+1};
-            else if(cursum>S){
-                cursum-=arr[s];
+        {
+            if(sum<ts)
+            {
+                e++;
+                sum+=arr[e];
+            }
+            else if(sum>ts)
+            {
+                sum-=arr[s];
                 s++;
-                
             }
-            else if(cursum<S){
-                //   cursum+=arr[e];
-                cursum+=arr[++e];
-                
-            }
-                
-                // cout<<s<<' '<<e<<' '<<cursum<<endl;
-                
+            else return {s+1,e+1};
         }
-        if(cursum==S)return {s+1,e+1};
         return {-1};
         
     }
