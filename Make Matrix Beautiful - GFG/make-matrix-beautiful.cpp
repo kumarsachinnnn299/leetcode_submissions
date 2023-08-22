@@ -4,6 +4,15 @@ using namespace std;
 
 // } Driver Code Ends
 
+// https://www.youtube.com/watch?v=N2prNH_ONck
+//Just find the max sum possible for any row or any coln, whichever have max sum among all
+//if any row has max sum, then find no of moves to convert all rows to that sum by simly adding the difference
+//no need to check for colmn in this case as columns can be made by just rearranging
+
+//Opposite case when column has max sum
+
+
+
 
 class Solution
 {
