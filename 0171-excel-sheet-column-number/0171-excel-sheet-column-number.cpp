@@ -1,3 +1,5 @@
+// https://www.youtube.com/watch?v=_NqvWkRN3Dc
+
 class Solution {
 public:
     int titleToNumber(string s) {
