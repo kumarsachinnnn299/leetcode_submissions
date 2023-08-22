@@ -4,60 +4,41 @@
 using namespace std;
 
 // } Driver Code Ends
-
-// https://www.youtube.com/watch?v=MvklwzVz654&list=PL-Jc9J83PIiFJRioti3ZV7QabwoJK6eKe&index=10
-//Similar to question repeating element except two
-
-//isme h
-
 class Solution{
 public:
-    int *findTwoElement(int *arr, int n) {
+    vector<int> findTwoElement(vector<int> arr, int n) {
         // code here
-        int xor1=0;
-        for(int i=0;i<n;i++)
-        {
-            xor1^=(i+1);
-            xor1^=arr[i];
-        }
-        
-        int a=0,b=0;
-        
-        int rmsbmask=xor1&(-xor1);
-        
-        for(int i=0;i<n;i++)
-        {
-            if((rmsbmask&arr[i])==0)a^=arr[i];
-            else b^=arr[i];
-            if((rmsbmask&(i+1))==0)a^=(i+1);
-            else b^=(i+1);
-            
-        }
-        
-        
-   
-        int *res;
-        //this loop is just to find which element is missing and which is repaeting
-        bool found=false;
-        for(int i=0;i<n;i++)
-        {
-            if(arr[i]==a){
-                found=true;
-                break;
-            }
-        }
-        if(found)
-        {
-          int ans[]={a,b};
-          res=ans;
-        }
-        else{
-            int ans[]={b,a};
-            res=ans;
-        }
-        
-        return res;
-        
+       for(int i=1;i<=n;i++)arr.push_back(i);
+       int x=arr[0];
+       for(int i=1;i<arr.size();i++)x^=arr[i];
+       int set=0;
+       for(int i=0;i<=32;i++)
+       {
+           int temp=1<<i;
+           if(x&temp)
+           {
+               set=temp;
+               break;
+           }
+       }
+       int f=0,s=0;
+       for(auto i:arr)
+       {
+           if(set&i)f^=i;
+           else s^=i;
+       }
+       for(int i=0;i<n;i++)
+       {
+           if(f==arr[i])
+           {
+               return {f,s};
+           }
+           else if(s==arr[i])
+           {
+               return {s,f};
+           }
+       }
+       return {-1};
     }
 };
 
@@ -69,7 +50,7 @@ int main() {
     while (t--) {
         int n;
         cin >> n;
-        int a[n];
+        vector<int> a(n);
         for (int i = 0; i < n; i++) {
             cin >> a[i];
         }
