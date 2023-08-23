@@ -6,6 +6,8 @@ using namespace std;
 class Solution {
 public:
     
+    //Khud kiya
+    
     int xm[8]={-1,-1,-1,0,1,1,1,0};
     int ym[8]={-1,0,1,1,1,0,-1,-1};
     
