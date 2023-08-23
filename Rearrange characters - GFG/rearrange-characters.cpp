@@ -12,46 +12,44 @@ class Solution
     public:
     string rearrangeString(string s)
     {
- vector<int>hash(26);
+        //code here
+        vector<int>hash(26);
         for(auto i:s)hash[i-'a']++;
-        int max=0,letter;
-        for(int i=0;i<hash.size();i++)
+        int max=0,letter=0;
+        for(int i=0;i<26;i++)
         {
-            if(hash[i]>max){
+            if(hash[i]>max)
+            {
                 max=hash[i];
                 letter=i;
             }
         }
-        
-       
-        if(max>((s.size()+1)/2))return "-1";
         int n=s.size();
-         vector<char>res(n);
-        
-        string ans="";
+        if(((n+1)/2)<max)return "-1";
+        // int n=s.size();
+        // return "1";
+        vector<char>res(n);
         int idx=0;
         while(hash[letter])
         {
-           res[idx]=char('a'+letter);
+            res[idx]=char('a'+letter);
             idx+=2;
             hash[letter]--;
         }
-        
-       
         for(int i=0;i<26;i++)
         {
             while(hash[i])
             {
-                if(idx>=res.size())idx=1;
+                if(idx>=s.size())idx=1;
                 res[idx]=char('a'+i);
                 hash[i]--;
                 idx+=2;
             }
-            
         }
-        for(int i=0;i<res.size();i++)ans+=res[i];
-        
+        string ans="";
+        for(auto i:res)ans+=i;
         return ans;
+        
         
     }
     
