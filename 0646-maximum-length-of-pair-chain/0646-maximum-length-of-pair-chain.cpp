@@ -1,3 +1,5 @@
+//Type of LCS but here we can sort
+
 class Solution {
 public:
     
