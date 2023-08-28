@@ -1,3 +1,5 @@
+//rotating the queue
+
 class MyStack {
 public:
     queue<int>q;
