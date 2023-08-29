@@ -87,20 +87,19 @@ struct Node
 Node* deleteNode(Node *head,int x)
 {
     //Your code here
-    if(x==1)return head->next;
     int c=1;
+    if(x==1)return head->next;
     Node*prev=NULL,*curr=head;
-    while(true)
+    while(curr)
     {
         if(c==x)
         {
-             prev->next=curr->next;
-             break;
-        
+            prev->next=curr->next;
+            return head;
         }
-        c++;
         prev=curr;
         curr=curr->next;
+        c++;
     }
     return head;
 }
