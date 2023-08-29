@@ -1,3 +1,6 @@
+//Khud kiya
+
+
 class Solution {
 public:
     int bestClosingTime(string s) {
@@ -27,11 +30,7 @@ public:
         
         a2.push_back({0,0});
         
-        // for(auto i:a1)cout<<i.first<<' '<<i.second<<", ";
-        // cout<<endl;
-        // for(auto i:a2)cout<<i.first<<' '<<i.second<<", ";
-        // cout<<endl;
-        
+
         int ans=0;
         int penalty=a1[0].second+a2[0].first;
         for(int i=1;i<a1.size();i++)
