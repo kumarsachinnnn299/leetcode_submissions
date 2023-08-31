@@ -130,6 +130,9 @@ struct Node
      struct Node* right;
 };
 */
+
+//khud kiya
+
 void printCorner(Node *root)
 {
 
