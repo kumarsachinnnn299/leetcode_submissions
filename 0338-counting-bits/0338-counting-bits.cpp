@@ -5,24 +5,22 @@ class Solution {
 public:
     vector<int> countBits(int n) {
         
-        vector<int>ans;
+      vector<int>ans;
         ans.push_back(0);
         for(int i=1;i<=n;i++)
         {
-            int c=0;
             int x=i;
-            int mask=x&(-1*x);
+            int rmsb_mask=x&(-1*x);
+            int c=0;
             while(true)
-            {   
+            {
                 c++;
-                x-=mask;
-             if(x==0)break;
-                mask=(x&(-1*x));
+                x-=rmsb_mask;
+                if(x==0)break;
+                rmsb_mask=x&(-1*x);
             }
             ans.push_back(c);
         }
         return ans;
-        
-        
     }
 };
