@@ -11,12 +11,12 @@ public:
         
         int ans=s.size();//suppose at start no substring is found so extra caharcters left will be complete string
         
-        for(auto word:arr)
+        for(auto i:arr)
         {
-            int len=word.size();
-            if(idx+len<=s.size()&&s.substr(idx,len)==word)
+            int size=i.size();
+            if(idx+size<=s.size()&&s.substr(idx,size)==i)
             {
-                int extra=helper(idx+len,arr,dp,s);
+                int extra=helper(idx+size,arr,dp,s);
                 ans=min(ans,extra);
             }
         }
@@ -29,8 +29,8 @@ public:
     }
     
     int minExtraChar(string s, vector<string>& arr) {
-        int n=s.size();
-        vector<int>dp(n,-1);
+        
+        vector<int>dp(s.size(),-1);
         return helper(0,arr,dp,s);
     }
 };
