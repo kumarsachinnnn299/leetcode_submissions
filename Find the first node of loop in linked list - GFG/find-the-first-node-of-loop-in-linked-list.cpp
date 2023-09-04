@@ -40,10 +40,6 @@ void loopHere(Node* head, Node* tail, int position)
     }
 
 */
-
-// https://www.youtube.com/watch?v=pAbFDZLPTV0
-
-
 class Solution
 {
     public:
@@ -51,28 +47,22 @@ class Solution
     int findFirstNode(Node* head)
     {
         // your code here
-      Node *slow=head,*fast=head,*temp=head;
-      while(true)
-      {
-          if(fast->next==NULL||fast->next->next==NULL)return -1;
-          else{
-               fast=fast->next->next;
-              slow=slow->next;
-              
-              if(fast==slow)
-              {
-                  while(slow!=temp)
-                  {
-                      slow=slow->next;
-                      temp=temp->next;
-                  }
-                  return slow->data;
-              }
-             
-          }
-      }
-      return 0;
-  
+        Node*temp=head,*slow=head,*fast=head;
+        while(fast&&fast->next)
+        {
+            fast=fast->next->next;
+            slow=slow->next;
+            if(fast==slow)
+            {   
+                while(fast!=temp)
+                {
+                    fast=fast->next;
+                    temp=temp->next;
+                }
+                return temp->data;
+            }
+        }
+        return -1;
     }
 };
 
