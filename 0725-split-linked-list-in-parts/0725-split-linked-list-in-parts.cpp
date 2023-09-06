@@ -20,27 +20,26 @@ public:
             ptr=ptr->next;
         }
         ptr=head;
-        if(n<=k)
-        {
-            for(int i=0;i<k;i++)
-            {   if(n)
-                {ptr=ptr->next;
-                ans.push_back(prev);
-                prev->next=NULL;
-                prev=ptr;
-                n--;
-                 }
-             else ans.push_back(NULL);
+//         if(n<=k)
+//         {
+//             for(int i=0;i<k;i++)
+//             {   if(n)
+//                 {ptr=ptr->next;
+//                 ans.push_back(prev);
+//                 prev->next=NULL;
+//                 prev=ptr;
+//                 n--;
+//                  }
+//              else ans.push_back(NULL);
                 
-            }
-            return ans;
-        }
-       else{
+//             }
+//             return ans;
+//         }
+//        else{
            
            int extra=n%k;
            int normal=n/k;
            
-           // cout<<normal<<' '<<extra;
            
            for(int i=0;i<k;i++)
            {   
@@ -69,7 +68,7 @@ public:
               
            }
            
-       }
+       // }
         
         return ans;
     }
