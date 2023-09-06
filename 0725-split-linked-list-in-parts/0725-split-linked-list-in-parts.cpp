@@ -8,6 +8,9 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+
+//Done by self
+
 class Solution {
 public:
     vector<ListNode*> splitListToParts(ListNode* head, int k) {
@@ -20,24 +23,7 @@ public:
             ptr=ptr->next;
         }
         ptr=head;
-//         if(n<=k)
-//         {
-//             for(int i=0;i<k;i++)
-//             {   if(n)
-//                 {ptr=ptr->next;
-//                 ans.push_back(prev);
-//                 prev->next=NULL;
-//                 prev=ptr;
-//                 n--;
-//                  }
-//              else ans.push_back(NULL);
-                
-//             }
-//             return ans;
-//         }
-//        else{
-           
-           int extra=n%k;
+        int extra=n%k;
            int normal=n/k;
            
            
@@ -67,8 +53,6 @@ public:
                }
               
            }
-           
-       // }
         
         return ans;
     }
