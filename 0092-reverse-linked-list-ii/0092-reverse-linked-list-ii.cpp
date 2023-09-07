@@ -8,56 +8,43 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
-
-// https://www.youtube.com/watch?v=tHKp8UuOkm4
-
 class Solution {
 public:
     ListNode* reverseBetween(ListNode* head, int left, int right) {
-        if(head->next==NULL)return head;
-        if(left==right)return head;
-        ListNode* leftend=NULL,*rightend=NULL,*temp=head,*st,*end,*prev=NULL,*nxt;
-        int c=1;
-        while(c!=left&&temp!=NULL)
-        {
-            leftend=temp;
-            temp=temp->next;
-            c++;
-        }
-        st=temp;
-        rightend=temp->next;
-         while(c!=right&&temp!=NULL)
-        {
-           
-            temp=temp->next;
-             rightend=temp->next;
-            c++;
-        }
-        end=temp;
-        cout<<st->val;
         
-        while(st!=rightend)
+        if(head->next==NULL||left==right)return head;
+        
+        ListNode*st,*end,*ptr=head,*pl,*nr;
+        int c=1;
+        while(ptr)
+        {   if(c==left-1)pl=ptr;
+            if(c==left)st=ptr;
+            if(c==right){
+                end=ptr;
+            nr=ptr->next;
+                break;
+                }
+            c++;
+            ptr=ptr->next;
+        }
+        
+        ListNode* prev=NULL,*nxt,*temp=st;
+        // return temp;
+        int len=right-left+1;
+        while(len--)
         {
-         nxt=st->next;
-        st->next=prev;
+            nxt=st->next;
+            st->next=prev;
             prev=st;
             st=nxt;
         }
-        if(leftend!=NULL)
-        {
-            leftend->next=prev;
-
-        }
-        temp=head;
-        if(rightend!=NULL)
-        {while(temp->next!=NULL)temp=temp->next;
-        temp->next=rightend;}
-       
         
-        if(leftend==NULL)return prev;
+        
+        if(left!=1)pl->next=prev;
+        if(left==1)head=prev;
+        temp->next=nr;
+        
         return head;
-        
             
-        
     }
 };
