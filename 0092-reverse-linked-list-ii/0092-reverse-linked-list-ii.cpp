@@ -8,6 +8,9 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+
+//Khud kiya
+
 class Solution {
 public:
     ListNode* reverseBetween(ListNode* head, int left, int right) {
