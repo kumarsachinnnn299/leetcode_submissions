@@ -1,29 +1,31 @@
-// https://www.youtube.com/watch?v=MCfH3DYHklI
-
 class Solution {
 public:
     int minOperations(vector<int>& nums, int x) {
-        unordered_map<int,int>mp;
         int sum=0;
-         mp[0]=-1;
-        for(int i=0;i<nums.size();i++)
+        int n=nums.size();
+        for(auto i:nums)sum+=i;
+        sum-=x;
+        if(sum<0)return -1;
+        if(sum==0)return n;
+        int s=0,e=0;
+        int csum=0;
+        int ans=INT_MAX;
+        while(e<n)
         {
-            sum+=nums[i];
-            mp[sum]=i;
-        }
-       
-        int target=sum-x;
-        if(target<0)return -1;
-        sum=0;
-        int ans=INT_MIN;
-        for(int i=0;i<nums.size();i++)
-        {   sum+=nums[i];
-            if(mp.find(sum-target)!=mp.end())
+            csum+=nums[e];
+            e++;
+            while(csum>sum&&s<n)
             {
-                ans=max(ans,i-mp[sum-target]);
+                csum-=nums[s];
+                s++;
+                
+            }
+            if(csum==sum)
+            {
+                ans=min(ans,n-e+s);
             }
         }
-        if(ans==INT_MIN)return -1;
-        return nums.size()-ans;
+        if(ans==INT_MAX)return -1;
+        return ans;
     }
 };
