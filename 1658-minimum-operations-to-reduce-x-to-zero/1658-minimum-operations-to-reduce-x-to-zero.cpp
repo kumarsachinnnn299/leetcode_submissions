@@ -1,3 +1,5 @@
+// https://www.youtube.com/watch?v=D2s4wN4MFnQ
+
 class Solution {
 public:
     int minOperations(vector<int>& nums, int x) {
