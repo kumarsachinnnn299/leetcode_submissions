@@ -3,44 +3,50 @@
 using namespace std;
 
 // } Driver Code Ends
-
-//Adarsh k concept se
-vector<int> find(int arr[], int n , int x )
+class Solution
 {
-    // code here
-    
-    int foccurence=-1,lastoccurence=-1,s=0,e=n-1;
-    
-    //for first occurence
-    while(s<=e)
+    public:
+    vector<int> find(int arr[], int n , int x )
     {
-        int mid=s+(e-s)/2;
-        if(arr[mid]==x)
-        {
-            foccurence=mid;
-            e=mid-1;
-        }
-        else if(arr[mid]>x)e=mid-1;
-        else s=mid+1;
-    }
-    
-    // for last occurence
-    s=0,e=n-1;
+        // code here
+        int f=-1,  l=-1;
+        int s=0,e=n-1;
         while(s<=e)
-    {
-        int mid=s+(e-s)/2;
-        if(arr[mid]==x)
         {
-            lastoccurence=mid;
-            s=mid+1;
+            int mid=s+(e-s)/2;
+            if(arr[mid]==x)
+            {
+                f=mid;
+                e=mid-1;
+            }
+            else if(arr[mid]>x)
+            {
+                e=mid-1;
+            }
+            else s=mid+1;
         }
-        else if(arr[mid]>x)e=mid-1;
-        else s=mid+1;
+        
+        s=0,e=n-1;
+        
+         while(s<=e)
+        {
+            int mid=s+(e-s)/2;
+            if(arr[mid]==x)
+            {
+                l=mid;
+                s=mid+1;
+            }
+            else if(arr[mid]>x)
+            {
+                e=mid-1;
+            }
+            else s=mid+1;
+        }
+        
+        return {f,l};
+        
     }
-    return {foccurence,lastoccurence};
-    
-    
-}
+};
 
 //{ Driver Code Starts.
 
@@ -56,7 +62,8 @@ int main()
         for(i=0;i<n;i++)
         cin>>arr[i];
         vector<int> ans;
-        ans=find(arr,n,x);
+        Solution ob;
+        ans=ob.find(arr,n,x);
         cout<<ans[0]<<" "<<ans[1]<<endl;
     }
     return 0;
