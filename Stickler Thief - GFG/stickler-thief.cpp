@@ -4,6 +4,10 @@ using namespace std;
 typedef long long int ll;
 
 // } Driver Code Ends
+
+//Very basic dp question
+//Same as house robber
+
 class Solution
 {
     public:
