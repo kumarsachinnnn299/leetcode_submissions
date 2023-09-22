@@ -4,6 +4,9 @@ using namespace std;
 
 
 // } Driver Code Ends
+
+#include <bits/stdc++.h>
+
 class Solution{
     public:
     // Function to find equilibrium point in the array.
@@ -12,15 +15,22 @@ class Solution{
     int equilibriumPoint(long long a[], int n) {
     
         // Your code here
-        if(n==1)return 1;
-        long long tsum=0,csum=0;
-        for(int i=0;i<n;i++)tsum+=a[i];
+        vector<int>as(n),ae(n);
+        for(int i=1;i<n;i++)
+        {
+            as[i]=as[i-1]+a[i-1];
+        }
+        for(int i=n-2;i>=0;i--)
+        {
+            ae[i]=ae[i+1]+a[i+1];
+        }
+        
         for(int i=0;i<n;i++)
         {
-            if(csum==tsum-csum-a[i])return i+1;
-            csum+=a[i];
+            if(as[i]==ae[i])return i+1;
         }
         return -1;
+        
     }
 
 };
