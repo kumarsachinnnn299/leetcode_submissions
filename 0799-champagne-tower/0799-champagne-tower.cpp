@@ -1,4 +1,5 @@
 //Pascals triangle
+// https://www.youtube.com/watch?v=BTndk4qhObQ&t=7s
 
 class Solution {
 public:
