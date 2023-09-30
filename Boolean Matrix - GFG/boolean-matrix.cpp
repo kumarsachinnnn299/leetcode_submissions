@@ -4,19 +4,6 @@ using namespace std;
 
 // } Driver Code Ends
 
-/*
-
-//Constant space
-// https://www.youtube.com/watch?v=3ylBTHCiihw&list=PLjeQ9Mb66hM2xgXW01bdC8luDS8iyZSMF&index=9
-
-/*
-
-use first row and column to store mark the row and col with value zero
-
-with help of two variables keep recored if the zero row and col can be all zeros or not
-
-*/
-
 
 class Solution
 {   
@@ -26,39 +13,32 @@ class Solution
     void booleanMatrix(vector<vector<int> > &matrix)
     {
         // code here 
-        bool zerorow=false,zerocol=false;
+        vector<int>rvis(1001),cvis(1001);
+        vector<pair<int,int>>arr;
         for(int i=0;i<matrix.size();i++)
-        {
+        {   
             for(int j=0;j<matrix[0].size();j++)
-            {
+            {   
                 if(matrix[i][j]==1)
                 {
-                    if(i==0)zerorow=true;
-                    if(j==0)zerocol=true;
-                    
-                    matrix[i][0]=1;
-                    matrix[0][j]=1;
-                    
+                    arr.push_back({i,j});
                 }
             }
         }
-        for(int i=1;i<matrix.size();i++)
+        for(auto i:arr)
         {
-            for(int j=1;j<matrix[0].size();j++)
+            int x=i.first;
+            int y=i.second;
+            if(rvis[x]==0)
+            {   rvis[x]=1;
+                for(int i=0;i<matrix[0].size();i++ )matrix[x][i]=1;
+            }
+            if(cvis[y]==0)
             {
-                if(matrix[i][0]||matrix[0][j])matrix[i][j]=1;
+                cvis[y]=1;
+                for(int i=0;i<matrix.size();i++)matrix[i][y]=1;
             }
         }
-        if(zerorow)
-        {
-            for(int i=0;i<matrix[0].size();i++)matrix[0][i]=1;
-        }
-           if(zerocol)
-        {
-            for(int i=0;i<matrix.size();i++)matrix[i][0]=1;
-        }
-        
-        
     }
 };
 
