@@ -1,3 +1,6 @@
+//https://www.youtube.com/watch?v=95j4yW6DBtw
+//Easy approach
+
 class Solution {
 public:
     bool winnerOfGame(string s) {
@@ -20,9 +23,7 @@ public:
         
         if(sA&&sA>2)ca+=(sA-2);
         if(sB&&sB>2)cb+=(sB-2);
-        
-        // cout<<ca<<' '<<cb;
-        // if(ca==0)return false;
+
         if(ca>cb)return true;
             return false;
         
