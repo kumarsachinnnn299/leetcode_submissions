@@ -32,6 +32,9 @@ struct Node
 
 }*head;
 */
+
+//Khud kiya
+
 class Solution
 {
     public:
