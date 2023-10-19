@@ -16,7 +16,7 @@ public:
             else t1+=t[i];
         }
         
-        cout<<s1<<' '<<t1;
+     
         
         return s1==t1;
     }
