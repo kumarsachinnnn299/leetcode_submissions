@@ -5,6 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 // https://www.youtube.com/watch?v=smIiEJLCcB8
+//Little hint
 
 class Solution
 {
