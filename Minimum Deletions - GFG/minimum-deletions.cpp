@@ -6,6 +6,9 @@ using namespace std;
 // } Driver Code Ends
 //User function template for C++
 
+//Khud kiya
+//Longest palindromic subsequence se ho jaygea
+
 class Solution{
   public:
     int minimumNumberOfDeletions(string S) { 
