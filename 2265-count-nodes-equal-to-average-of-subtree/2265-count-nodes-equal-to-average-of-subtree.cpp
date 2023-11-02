@@ -11,32 +11,25 @@
  */
 
 
-//Brute force
 
 class Solution {
 public:
     
-    int count(TreeNode*root)
+    pair<int,int>helper(TreeNode*root)
     {
-        if(root==NULL)return 0;
-        return 1+count(root->left)+count(root->right);
+        if(root==NULL)return {0,0};
+        auto templ=helper(root->left);
+        auto tempr=helper(root->right);
+        return {root->val+templ.first+tempr.first,1+templ.second+tempr.second};
     }
     
-    int sumf(TreeNode*root)
-    {
-        if(root==NULL)return 0;
-        return sumf(root->left)+sumf(root->right)+root->val;
-    }
     
     void inorder(TreeNode*root,int&ans)
     {
         if(root==NULL)return ;
-        int l=sumf(root->left);
-        int r=sumf(root->right);
-        int lc=count(root->left);
-        int rc=count(root->right);
-        int ts=l+r+root->val;
-        int tc=lc+rc+1;
+        auto temp=helper(root);
+        int ts=temp.first;
+        int tc=temp.second;
         if((ts/tc)==root->val)ans++;
         
         inorder(root->left,ans);
