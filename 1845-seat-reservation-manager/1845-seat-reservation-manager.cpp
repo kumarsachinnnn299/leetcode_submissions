@@ -1,3 +1,5 @@
+//Done
+
 class SeatManager {
 public:
     priority_queue<int,vector<int>,greater<int>>pq;
