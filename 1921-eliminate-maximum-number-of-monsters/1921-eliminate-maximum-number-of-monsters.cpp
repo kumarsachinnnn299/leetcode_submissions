@@ -1,22 +1,22 @@
+
+//Done
 class Solution {
 public:
     int eliminateMaximum(vector<int>& dist, vector<int>& speed) {
-        vector<int>arr;
+    
         for(int i=0;i<dist.size();i++)
-        {   int temp=dist[i]/speed[i];
-         temp+=(dist[i]%speed[i]!=0);
-            arr.push_back(temp);
+        {   
+            dist[i]=(dist[i]/speed[i])+(dist[i]%speed[i]!=0);
         }
-        sort(arr.begin(),arr.end());
+        sort(dist.begin(),dist.end());
       
-        bool charged=true;
         int ans=1;
         int time=1;
         int idx=1;
-        while(idx<arr.size())
+        while(idx<dist.size())
         {
             
-                if(arr[idx]<=time)return ans;
+                if(dist[idx]<=time)return ans;
                 time++;
                 ans++;
                 
