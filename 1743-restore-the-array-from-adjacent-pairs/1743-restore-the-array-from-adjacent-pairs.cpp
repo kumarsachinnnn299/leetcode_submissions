@@ -3,7 +3,7 @@
 class Solution {
 public:
     
-    void dfs(map<int,vector<int>>&mp,set<int>&vis,int a,vector<int>&ans)
+    void dfs(unordered_map<int,vector<int>>&mp,set<int>&vis,int a,vector<int>&ans)
     {
         if(vis.find(a)!=vis.end())return;
         vis.insert(a);
@@ -15,7 +15,7 @@ public:
     }
     
     vector<int> restoreArray(vector<vector<int>>& arr) {
-        map<int,vector<int>>mp;
+        unordered_map<int,vector<int>>mp;
         for(auto i:arr)
         {
             mp[i[0]].push_back(i[1]);
