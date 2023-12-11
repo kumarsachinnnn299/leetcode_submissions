@@ -3,7 +3,7 @@ public:
     int findSpecialInteger(vector<int>& arr) {
         int n=arr.size();
         n=(n/4)+(n%4!=0);
-        unordered_map<int,int>mp;
+        map<int,int>mp;
         for(auto i:arr)
         {
             mp[i]++;
