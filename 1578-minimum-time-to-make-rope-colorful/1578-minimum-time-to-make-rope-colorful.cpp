@@ -1,6 +1,8 @@
 class Solution {
 public:
     
+    //Done
+    
     int helper(int idx,string &s, vector<int>&time)
     {
         if(idx>=s.size())return 0;
