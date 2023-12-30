@@ -9,10 +9,6 @@ public:
             for(auto j:i)arr[j-'a']++;
         }
         
-       
-        
-        // for(auto i:arr)cout<<i<<' ';
-        cout<<endl;
         int gcd=-1;
         for(auto i:arr){
             if(i)
@@ -21,8 +17,6 @@ public:
                 else gcd=i;
             }
         }
-        
-        // cout<<gcd<<endl;
         
         return gcd%n==0;
     }
