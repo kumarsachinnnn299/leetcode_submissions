@@ -1,5 +1,8 @@
 class Solution {
 public:
+    
+    //Done
+    
     int numberOfBeams(vector<string>& bank) {
         vector<int>arr;
         for(auto i:bank)
