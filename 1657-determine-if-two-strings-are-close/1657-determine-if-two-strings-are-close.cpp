@@ -1,5 +1,8 @@
 class Solution {
 public:
+    
+    //DOne
+    
     bool closeStrings(string word1, string word2) {
         int n1=word1.size(),n2=word2.size();
         if(n1!=n2)return false;
