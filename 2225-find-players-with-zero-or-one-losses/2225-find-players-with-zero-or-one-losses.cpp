@@ -1,6 +1,7 @@
 class Solution {
 public:
     vector<vector<int>> findWinners(vector<vector<int>>& matches) {
+        //done
         map<int,int>mpw,mpl;
         for(auto i:matches)
         {
@@ -8,7 +9,7 @@ public:
             mpl[i[1]]++;
             
         }
-        vector<vector<int>>ans;
+    
         vector<int>ar0,ar1;
         for(auto i:mpw)
         {
