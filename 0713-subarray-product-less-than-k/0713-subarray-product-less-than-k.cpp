@@ -3,7 +3,7 @@
 class Solution {
 public:
     int numSubarrayProductLessThanK(vector<int>& nums, int k) {
-        ios_base::sync_with_stdio(false), cin.tie(NULL), cout.tie(NULL);
+      
         if (k == 0)
             return 0;
         int n = nums.size(), product = 1, cnt {};
